@@ -1,4 +1,3 @@
-import "./App.css";
 import Pokecatch from "./pages/Pokecatch";
 
 function App() {
