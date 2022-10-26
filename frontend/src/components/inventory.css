@@ -1,0 +1,17 @@
+.inventory {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.place1,
+.place2,
+.place3,
+.place4 {
+  background-color: #aba9bc;
+  opacity: 30%;
+  width: 40px;
+  height: 40px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
