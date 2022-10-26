@@ -1,6 +1,7 @@
 import React from "react";
 import Attack from "../components/Pokefight/Attack";
 import FightingPoke from "../components/Pokefight/FightingPoke";
+import pokeVS from "../assets/pokeVS.png";
 
 function Pokefight() {
   return (
@@ -8,7 +9,7 @@ function Pokefight() {
       <header>Pokeheader</header>
       <div className="versusbar">
         <h3>Name1</h3>
-        <img src="./assets/pokeVS.png" alt="not found" />
+        <img src={pokeVS} alt="not found" />
         <h3>Name2</h3>
       </div>
       <div className="terrain">
