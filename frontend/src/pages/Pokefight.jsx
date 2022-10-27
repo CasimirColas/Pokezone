@@ -1,9 +1,22 @@
 import React from "react";
+import axios from "axios";
 import Attack from "../components/Pokefight/Attack";
 import FightingPoke from "../components/Pokefight/FightingPoke";
 import pokeVS from "../assets/pokeVS.png";
 
 function Pokefight() {
+  const names = [];
+  React.useEffect(() => {
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon/?limit=151")
+      .then((response) => response.data)
+      .then((data) => {
+        const u = data.results;
+        u.forEach((e) => {
+          names.push(e.name);
+        });
+      });
+  }, []);
   return (
     <div className="Pokefight">
       <header>Pokeheader</header>
