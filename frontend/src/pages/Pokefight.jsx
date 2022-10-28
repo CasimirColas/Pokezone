@@ -62,7 +62,6 @@ function Pokefight() {
   if (!myPoke || !enmyPoke) {
     return <>loading...</>;
   }
-
   return (
     <div className="Pokefight">
       <header>Pokeheader</header>
@@ -75,14 +74,14 @@ function Pokefight() {
         <h3>{enmyPoke.name}</h3>
       </div>
       <div className="terrain">
-        <FightingPoke player={0} info="pokE" />
-        <FightingPoke player={1} info="pokA" />
+        <FightingPoke player={0} pokemon={myPoke} />
+        <FightingPoke player={1} pokemon={enmyPoke} />
       </div>
       <div className="abilities">
-        <Attack pos={1} info="pok1" />
-        <Attack pos={2} info="pok1" />
-        <Attack pos={3} info="pok1" />
-        <Attack pos={4} info="pok1" />
+        <Attack pos={1} info={myPoke.attack1} />
+        <Attack pos={2} info={myPoke.attack2} />
+        <Attack pos={3} info={myPoke.attack3} />
+        <Attack pos={4} info={myPoke.attack4} />
       </div>
       <footer>Pokefooter</footer>
     </div>
