@@ -16,7 +16,7 @@ function Pokefight() {
     return tab[nb];
   }
   function createPoke(nameP) {
-    const promise = axios
+    return axios
       .get(`https://pokeapi.co/api/v2/pokemon/${nameP}`)
       .then((response) => response.data)
       .then((data) => {
@@ -39,11 +39,10 @@ function Pokefight() {
         };
         return pokemon;
       });
-    return promise;
   }
   function randomSet() {
-    setMyPoke(createPoke(randomTab(names)));
-    setEnmyPoke(createPoke(randomTab(names)));
+    createPoke(randomTab(names)).then((response) => setMyPoke(response));
+    createPoke(randomTab(names)).then((response) => setEnmyPoke(response));
   }
   useEffect(() => {
     axios
