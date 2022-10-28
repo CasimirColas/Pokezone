@@ -15,16 +15,35 @@ function Pokefight() {
     const nb = Math.floor(Math.random() * tab.length);
     return tab[nb];
   }
-  function createPokemon(nameP) {
-    const pokemon = {
-      name: nameP,
-      ability: "test",
-    };
-    return pokemon;
+  function createPoke(nameP) {
+    const promise = axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${nameP}`)
+      .then((response) => response.data)
+      .then((data) => {
+        const pokedata = data;
+        const pokemon = {
+          name: nameP,
+          image: pokedata.sprites.other["official-artwork"].front_default,
+          hp: pokedata.stats[0].base_stat,
+          a: pokedata.stats[1].base_stat,
+          as: pokedata.stats[3].base_stat,
+          d: pokedata.stats[2].base_stat,
+          ds: pokedata.stats[4].base_stat,
+          speed: pokedata.stats[5].base_stat,
+          types: pokedata.types.map((e) => e.type.name),
+          color: "",
+          attack1: "",
+          attack2: "",
+          attack3: "",
+          attack4: "",
+        };
+        return pokemon;
+      });
+    return promise;
   }
   function randomSet() {
-    setMyPoke(createPokemon(randomTab(names)));
-    setEnmyPoke(createPokemon(randomTab(names)));
+    setMyPoke(createPoke(randomTab(names)));
+    setEnmyPoke(createPoke(randomTab(names)));
   }
   useEffect(() => {
     axios
@@ -37,13 +56,14 @@ function Pokefight() {
           result.push(e.name);
         });
         setNames(result);
-        setMyPoke(createPokemon(randomTab(result)));
-        setEnmyPoke(createPokemon(randomTab(result)));
+        createPoke(randomTab(result)).then((response) => setMyPoke(response));
+        createPoke(randomTab(result)).then((response) => setEnmyPoke(response));
       });
   }, []);
-  // setMyPoke(createPokemon(randomTab(names)))
-  // setEnmyPoke(createPokemon(randomTab(names)))
-  console.warn(myPoke, enmyPoke);
+  if (!myPoke || !enmyPoke) {
+    return <>loading...</>;
+  }
+
   return (
     <div className="Pokefight">
       <header>Pokeheader</header>
@@ -51,9 +71,9 @@ function Pokefight() {
         New set
       </button>
       <div className="versusbar">
-        <h3>myPoke</h3>
+        <h3>{myPoke.name}</h3>
         <img src={pokeVS} alt="not found" />
-        <h3>enmyPoke</h3>
+        <h3>{enmyPoke.name}</h3>
       </div>
       <div className="terrain">
         <FightingPoke player={0} info="pokE" />
