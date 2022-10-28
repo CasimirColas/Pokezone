@@ -1,0 +1,110 @@
+/*CSS properties:*/
+
+:root {
+    --primary-color: #0A285F;
+    --secondary-color: #B0002D;
+    --light-gray: #ABA9BC;
+    --dark-gray: #767586;
+    --margin-city: 1rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+    position: relative;
+    color: white;
+    box-shadow: 0px 2px 5px 1px gray;
+    background: var(--primary-color);
+    border-bottom-left-radius: 10% 50%;
+    border-bottom-right-radius: 10% 50%;
+}
+
+.navbar-red {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+    position: relative;
+    color: white;
+    box-shadow: 0px 2px 5px 1px gray;
+    background: var(--secondary-color);
+    border-bottom-left-radius: 10% 50%;
+    border-bottom-right-radius: 10% 50%;
+}
+
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6rem;
+    font-size: 0.9rem;
+    text-shadow: 2px 2px 2px black;
+    color: white;
+    text-decoration: none;
+}
+
+
+ul li a:hover {
+    color: black;
+}
+
+
+.home {
+    display: flex;
+    position: relative;
+    font-size: 1.8rem;
+    margin-top: 2px;
+}
+
+.pokeball img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0px 2px 5px 1px gray;
+    margin-left: 12rem;
+    top: 2.7em;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+
+}
+
+.ultraball img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0px 2px 5px 1px gray;
+    margin-left: 12rem;
+    top: 2.7em;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+
+}

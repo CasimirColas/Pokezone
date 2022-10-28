@@ -1,36 +1,40 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import React from "react";
+import Pokemon2 from "../assets/images/Pokemon2.png";
+import "../components/css/home.css";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import "animate.css";
 
-export default function Home() {
+function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
+    <div className="pokemon">
+      <img src={Pokemon2} width="300px" height="200px" alt="pokemon" />
+      <div className="animate__animated animate__zoomInDown animate__delay-0.5s">
+        <p>PokeZone</p>
+      </div>
 
-      <Counter />
+      <section>
+        <article className="pokecatch">
+          <div>PokeCatch</div>
+          <div className="box">Play to catch some Pokemons !</div>
+        </article>
 
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+        <article className="pokefight">
+          <div className="box2">Play to fight the Pokemons !</div>
+          <div>PokeFight</div>
+        </article>
+
+        <article className="pokefeed">
+          <div>PokeFeed</div>
+          <div className="box">Feed the Pokemons to evolve them!</div>
+        </article>
+
+        <article className="pokedex">
+          <div className="box2">Search any Pokemons you want!</div>
+          <div>PokeDex</div>
+        </article>
+      </section>
+    </div>
   );
 }
+
+export default Home;
