@@ -1,3 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 import React from "react";
 import Axios from "axios";

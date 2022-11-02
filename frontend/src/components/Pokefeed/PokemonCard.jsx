@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react";
 import "./Pokefeed.css";
 import ValuesUp from "./ValuesUp";
@@ -7,11 +8,11 @@ function PokemonCard() {
     <div>
       <table className="pokemon-table">
         <tr>
-          <td> </td>
+          <td />
           <th scope="col" className="">
             Pokémon de base
           </th>
-          <th className="test"></th>
+          <th scope="col" className="" />
           <th scope="col" className="">
             Pokémon évolué
           </th>
