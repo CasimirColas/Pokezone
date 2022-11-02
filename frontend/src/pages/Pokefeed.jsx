@@ -5,16 +5,16 @@
 import React from "react";
 import Axios from "axios";
 
-import SearchPokemon from "@components/Pokefeed/SearchPokemon";
-import Pokemonchosen from "@components/Pokefeed/PokemonChosen";
-import Berries from "@components/Pokefeed/Berries";
-import EvolutionProgress from "@components/Pokefeed/EvolutionProgress";
-import LevelUp from "@components/Pokefeed/LevelUp";
-import PokemonEvolved from "@components/Pokefeed/PokemonEvolved";
-import PokemonCard from "@components/Pokefeed/PokemonCard";
-import NextEvolution from "@components/Pokefeed/NextEvolution";
-import NextPokemon from "@components/Pokefeed/NextPokemon";
-import PokemonName from "@components/Pokefeed/PokemonName";
+import SearchPokemon from "../components/Pokefeed/SearchPokemon";
+import Pokemonchosen from "../components/Pokefeed/PokemonChosen";
+import Berries from "../components/Pokefeed/Berries";
+import EvolutionProgress from "../components/Pokefeed/EvolutionProgress";
+import LevelUp from "../components/Pokefeed/LevelUp";
+import PokemonEvolved from "../components/Pokefeed/PokemonEvolved";
+import PokemonCard from "../components/Pokefeed/PokemonCard";
+import NextEvolution from "../components/Pokefeed/NextEvolution";
+import NextPokemon from "../components/Pokefeed/NextPokemon";
+import PokemonName from "../components/Pokefeed/PokemonName";
 
 function App() {
   const [pokemons, setPokemons] = React.useState([]);
