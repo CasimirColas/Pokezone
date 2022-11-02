@@ -25,6 +25,9 @@
     background: var(--primary-color);
     border-top-left-radius: 10% 80%;
     border-top-right-radius: 10% 80%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer p {
@@ -42,6 +45,9 @@
     background: var(--secondary-color);
     border-top-left-radius: 10% 80%;
     border-top-right-radius: 10% 80%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-red p {
