@@ -1,0 +1,196 @@
+/*Retrait des marges sur tout la page*/
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Barre de recherche*/
+.pokemon-search {
+    background-color: #D9D9D9;
+    width: 280px;
+    height: 30px;
+    margin: auto;
+    border: #B0002D solid 1px;
+    border-radius: 15px 0px 15px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Champ de recherche*/
+.search-field {
+    background-color: #D9D9D9;
+}
+
+/*Affichage du Pokemon choisi*/
+.pokemon-selected {
+    width: 140px;
+    height: 160px;
+    margin: auto;
+}
+
+.pokemon-selected-img {
+    width: 140px;
+    height: 160px;
+    margin: auto;
+}
+
+/*Texte pour nourir le Pokemon*/
+.feed-txt {
+    width: 250px;
+    text-align: center;
+    color: #B0002D;
+}
+
+/*Conteneur bonbons*/
+.berries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/*Affichage bonbons*/
+.berries-img {
+    width: 50px;
+    height: 50px;
+    margin: 10px
+}
+
+/*Barre d'évolution*/
+.evolution-bar {
+    background-color: #1C4CBD;
+    opacity: 0.5;
+    width: 280px;
+    height: 30px;
+    margin: auto;
+    border: #B0002D solid 1px;
+    border-radius: 15px 0px 15px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Texte dans la barre d'évolution*/
+.progress-txt {
+    color: black;
+}
+
+/*Image "Level Up"*/
+.levelup-img {
+    width: 331px;
+    height: 158px;
+    margin: auto;
+}
+
+/*Image après évolution*/
+
+.pokemon-evolved {
+    margin-left: 700px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pokemon-evolved-img {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+/*Tableau détailant les nouvelles caractéristiques*/
+.pokemon-table {
+    background-color: #D9D9D9;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+    opacity: 0.9;
+    border: #1C4CBD solid 3px;
+    border-radius: 20px 0px 20px 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-collapse: collapse;
+    justify-content: center;
+    align-items: center;
+}
+
+th {
+    border: #1C4CBD solid 1px;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+/*Conteneur des points gagnés lors de l'évolution*/
+.values-up-box {
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #2CAB66;
+    border: 2.5px solid rgba(44, 171, 102, 0.5);
+    border-radius: 25%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*Valeur des points gagnés lors de l'évolution*/
+.values-up-txt {
+    font-size: 10px;
+    line-height: 20px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*Banniere "Prochaine évolution*/
+.next-evolution-bloc {
+    width: 280px;
+    height: 45px;
+    margin: auto;
+    margin-top: 25px;
+    background: #1C4CBD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-evolution-txt {
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+/*Prochaine évolution*/
+.pokemon-name-bloc {
+    width: 180px;
+    height: 25px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background: #B0002D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-name-txt {
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.pokemon-evolution-bloc {
+    margin-left: auto;
+}
+
+.pokemon-evolution-img {
+    width: 180px;
+    height: 160px;
+    margin: auto;
+    margin-top: 10px;
+}
