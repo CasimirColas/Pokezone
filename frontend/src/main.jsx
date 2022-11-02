@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-import App from "./App";
+import Pokedex from "./pages/Pokedex";
+import Header from "./components/App components/Header";
+import Footer from "./components/App components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <App />
+    <Header />
+    <Pokedex />
+    <Footer />
   </React.StrictMode>
 );

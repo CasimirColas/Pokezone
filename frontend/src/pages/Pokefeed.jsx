@@ -1,0 +1,11 @@
+import React from "react";
+
+function Pokefeed() {
+  return (
+    <div>
+      <p>PokeFeed</p>
+    </div>
+  );
+}
+
+export default Pokefeed;
