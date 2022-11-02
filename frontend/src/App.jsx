@@ -1,19 +1,49 @@
-import React, { useState } from "react";
-import Home from "./pages/Home";
+import { useState } from "react";
+import Index from "./pages/Index";
+import Pokefight from "./pages/Pokefight";
+import Pokefeed from "./pages/Pokefeed";
+import Pokecatch from "./pages/Pokecatch";
 import Pokedex from "./pages/Pokedex";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Header from "./components/App components/Header";
+import Footer from "./components/App components/Footer";
+
 import "./App.css";
 
 function App() {
-  const [menu, setMenu] = useState("home");
-
+  const [pageNumb, setpageNumb] = useState(0);
+  const [page, setPage] = useState(<Index />);
+  function goToPokefight() {
+    setpageNumb(1);
+    setPage(<Pokefight />);
+  }
+  function goToPokecatch() {
+    setpageNumb(2);
+    setPage(<Pokecatch />);
+  }
+  function goToPokefeed() {
+    setpageNumb(3);
+    setPage(<Pokefeed />);
+  }
+  function goToPokedex() {
+    setpageNumb(4);
+    setPage(<Pokedex />);
+  }
+  function goToIndex() {
+    setpageNumb(0);
+    setPage(<Index />);
+  }
   return (
     <div className="App">
-      <Navbar path={menu} setMenu={setMenu} />
-      {menu === "home" ? <Home /> : <Pokedex />}
-
-      <Footer path={menu} />
+      <Header
+        goTo0={goToIndex()}
+        goTo1={goToPokefight()}
+        goTo2={goToPokefeed()}
+        goTo3={goToPokecatch()}
+        goTo4={goToPokedex()}
+        onPage={pageNumb}
+      />
+      {page}
+      <Footer onPage={pageNumb} />
     </div>
   );
 }
