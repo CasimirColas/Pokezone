@@ -1,0 +1,85 @@
+/*CSS properties:*/
+
+:root {
+  --primary-color: #0a285f;
+  --secondary-color: #b0002d;
+  --light-gray: #aba9bc;
+  --dark-gray: #767586;
+  --margin-city: 1rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.pokeup {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 0px;
+  top: 0px;
+  margin-top: 45%;
+  margin-left: 25%;
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 100% 100%;
+  
+  
+
+  background: var(--secondary-color);
+  border: 10px solid #000000;
+
+  /*
+  box-shadow: rgb(6, 5, 5) 0px 1px 2px 7px;
+  
+  width: 60px;
+  height: 30px;
+   */
+}
+
+.pokedown {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 0px;
+  top: 0px;
+  margin-bottom: 25%;
+  margin-left: 25%;
+  margin-top: 65%;
+  border-bottom-left-radius: 100% 100%;
+  border-bottom-right-radius: 100% 100%;
+
+  background: #ffffff;
+  border: 10px solid #000000;
+
+  /* 
+  box-shadow: rgb(6, 5, 5) 0px 1px 2px 7px;
+ 
+  width: 40px;
+  height: 30px;
+   */
+}
+
+.smallBall {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  left: 81px;
+  top: 73px;
+  margin-left: 22%;
+  margin-top: 57%;
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 100% 100%;
+  border-bottom-left-radius: 100% 100%;
+  border-bottom-right-radius: 100% 100%;
+
+  background: #ffffff;
+  border: 8px solid #000000;
+}
