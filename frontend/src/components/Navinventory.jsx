@@ -3,8 +3,10 @@ import "./navinventory.css";
 
 function Navinventory() {
   return (
-    <div className="navInventory">
-      <div className="textNavInventory">Inventory</div>
+    <div className="generalnavinventory">
+      <div className="navInventory">
+        <div className="textNavInventory">INVENTORY</div>
+      </div>
     </div>
   );
 }

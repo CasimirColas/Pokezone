@@ -1,3 +1,8 @@
+.generalnavinventory {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .navInventory {
     background-color: #1C4CBD;
     width: 250px;
@@ -7,9 +12,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: -10px 10px 20px 0px #767586;
+
 }
 
 .textNavInventory {
     color: white;
     font-size: 10px;
 }
+

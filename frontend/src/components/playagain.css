@@ -1,0 +1,17 @@
+
+.playagain {
+background-color: #1C4CBD;
+width: 175px;
+height: 60px;
+border-top-left-radius: 15px;
+border-bottom-right-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: -10px 10px 20px 0px #767586;
+}
+
+.textplayagain {
+color: white;
+font-size: 20px;
+}

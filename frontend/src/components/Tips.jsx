@@ -3,9 +3,11 @@ import "./tips.css";
 
 function Tips() {
   return (
-    <div className="tips">
-      <div className="texttips">
-        Click on the <br /> PokeBall to <br /> lauch it
+    <div className="generaltips">
+      <div className="tips">
+        <div className="texttips">
+          Tips <br /> Here
+        </div>
       </div>
     </div>
   );
