@@ -19,16 +19,16 @@
   height: 45rem;
   position: absolute;
   background-image: url('./assets/images/Pokebackground.jpg');
-  box-shadow: none;
+  box-shadow: 2px 2px 2px;
 }
 
 
-pokedex_back {
+#pokedex_back {
   margin: 5%;
   opacity: 50%;
   height: 45rem;
   background-color: #767586;
-  box-shadow: #767586 1px 1px 1px 1px;
+  box-shadow: #767586 1px 5px 1px 1px;
   border-bottom-left-radius: 15% 7%;
   border-bottom-right-radius: 15% 7%;
   border-top-left-radius: 15% 7%;

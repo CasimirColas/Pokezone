@@ -16,7 +16,7 @@ function Pokedex() {
         />
       </div>
 
-      <div className="poke_list_parent">
+      <div id="myContainer">
         <div id="pokedex_back" />
       </div>
 

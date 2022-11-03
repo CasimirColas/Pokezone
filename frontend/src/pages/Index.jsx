@@ -7,7 +7,7 @@ import "animate.css";
 function Index() {
   return (
     <div className="pokemon">
-      <img src={Pokemon2} width="300px" height="200px" alt="pokemon" />
+      <img src={Pokemon2} width="250px" height="170px" alt="pokemon" />
       <div className="animate__animated animate__zoomInDown animate__delay-0.5s">
         <p>PokeZone</p>
       </div>

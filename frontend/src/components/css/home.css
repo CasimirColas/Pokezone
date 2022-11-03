@@ -45,11 +45,11 @@ section {
     background-color: #767586;
     box-shadow: 0px 2px 5px 1px gray;
     margin-left: 0.5rem;
-    height: 4rem;
-    width: 20ch;
+    height: 4.5rem;
+    width: 15ch;
     border-top-right-radius: 5% 30%;
-    border-top-left-radius: 0%;
-    border-bottom-right-radius: 0%;
+    border-top-left-radius: 5% 30%;
+    border-bottom-right-radius: 5% 30%;
     border-bottom-left-radius: 5% 30%;
 }
 
@@ -60,12 +60,12 @@ section {
     background-color: #767586;
     box-shadow: 0px 2px 5px 1px gray;
     margin-right: 0.5rem;
-    height: 4rem;
-    width: 20ch;
+    height: 4.5rem;
+    width: 15ch;
+    border-top-right-radius: 5% 30%;
     border-top-left-radius: 5% 30%;
-    border-top-right-radius: 0%;
-    border-bottom-left-radius: 0%;
     border-bottom-right-radius: 5% 30%;
+    border-bottom-left-radius: 5% 30%;
 }
 
 article.pokecatch {
@@ -77,14 +77,13 @@ article.pokecatch {
     padding-left: 10px;
     background-color: #ABA9BC;
     border-top-right-radius: 5% 30%;
-    border-top-left-radius: 0%;
-    border-bottom-right-radius: 0%;
+    border-top-left-radius: 5% 30%;
+    border-bottom-right-radius: 5% 30%;
     border-bottom-left-radius: 5% 30%;
     box-shadow: 0px 2px 5px 1px gray;
     flex: 50%;
     opacity: 70%;
-    height: 100px;
-    
+    height: 6rem;
 }
 
 article.pokefight {
@@ -95,10 +94,10 @@ article.pokefight {
     font-size: 1.3rem;
     padding-right: 10px;
     background-color: #ABA9BC;
+    border-top-right-radius: 5% 30%;
     border-top-left-radius: 5% 30%;
-    border-top-right-radius: 0%;
-    border-bottom-left-radius: 0%;
     border-bottom-right-radius: 5% 30%;
+    border-bottom-left-radius: 5% 30%;
     box-shadow: 0px 2px 5px 1px gray;
     flex: 50%;
     opacity: 70%;
@@ -114,8 +113,8 @@ article.pokefeed {
     padding-left: 10px;
     background-color: #ABA9BC;
     border-top-right-radius: 5% 30%;
-    border-top-left-radius: 0%;
-    border-bottom-right-radius: 0%;
+    border-top-left-radius: 5% 30%;
+    border-bottom-right-radius: 5% 30%;
     border-bottom-left-radius: 5% 30%;
     box-shadow: 0px 2px 5px 1px gray;
     flex: 50%;
@@ -131,10 +130,10 @@ article.pokedex {
     font-size: 1.3rem;
     padding-right: 10px;
     background-color: #ABA9BC;
+    border-top-right-radius: 5% 30%;
     border-top-left-radius: 5% 30%;
-    border-top-right-radius: 0%;
-    border-bottom-left-radius: 0%;
     border-bottom-right-radius: 5% 30%;
+    border-bottom-left-radius: 5% 30%;
     box-shadow: 0px 2px 5px 1px gray;
     flex: 50%;
     opacity: 70%;
