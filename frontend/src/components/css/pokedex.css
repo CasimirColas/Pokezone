@@ -14,72 +14,68 @@
   box-sizing: border-box;
 }
 
-.pokeup {
-  box-sizing: border-box;
 
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  left: 0px;
-  top: 0px;
-  margin-top: 45%;
-  margin-left: 25%;
-  border-top-left-radius: 100% 100%;
-  border-top-right-radius: 100% 100%;
-  
-  
 
-  background: var(--secondary-color);
-  border: 10px solid #000000;
-
-  /*
-  box-shadow: rgb(6, 5, 5) 0px 1px 2px 7px;
-  
-  width: 60px;
-  height: 30px;
-   */
+article {
+  margin: 5%;
+  opacity: 50%;
+  height: 45rem;
+  background-color: #767586;
+  box-shadow: #767586 1px 1px 1px 1px;
+  border-bottom-left-radius: 15% 7%;
+  border-bottom-right-radius: 15% 7%;
+  border-top-left-radius: 15% 7%;
+  border-top-right-radius: 15% 7%;
 }
 
+img.pokeup,
+img.pokedown {
+  width: 100px;
+  height: 50px;
+}
+
+.top_pokeball_parent,
+.bottom_pokeball_parent {
+  position: relative;
+  height: 41vh;
+}
+
+.pokeup,
 .pokedown {
-  box-sizing: border-box;
-
   position: absolute;
-  width: 200px;
-  height: 100px;
-  left: 0px;
-  top: 0px;
-  margin-bottom: 25%;
-  margin-left: 25%;
-  margin-top: 65%;
-  border-bottom-left-radius: 100% 100%;
-  border-bottom-right-radius: 100% 100%;
-
-  background: #ffffff;
-  border: 10px solid #000000;
-
-  /* 
-  box-shadow: rgb(6, 5, 5) 0px 1px 2px 7px;
- 
-  width: 40px;
-  height: 30px;
-   */
+  left: 39%;
+}
+.pokedown {
+  bottom: calc(100% - 50px);
+}
+.pokeup {
+  bottom: 0;
 }
 
-.smallBall {
-  box-sizing: border-box;
-
-  position: absolute;
-  width: 61px;
-  height: 61px;
-  left: 81px;
-  top: 73px;
-  margin-left: 22%;
-  margin-top: 57%;
-  border-top-left-radius: 100% 100%;
-  border-top-right-radius: 100% 100%;
-  border-bottom-left-radius: 100% 100%;
-  border-bottom-right-radius: 100% 100%;
-
-  background: #ffffff;
-  border: 8px solid #000000;
+@keyframes slideInUp {
+  from {
+    visibility: visible;
+  }
+  to {
+    bottom: calc(90% - 50px);
+  }
+}
+@keyframes slideInDown {
+  from {
+    visibility: visible;
+  }
+  to {
+    bottom: -20%;
+  }
+}
+/* The element to apply the animation to */
+.pokeup {
+  animation-name: slideInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.pokedown {
+  animation-name: slideInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
