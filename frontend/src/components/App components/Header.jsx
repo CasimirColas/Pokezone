@@ -34,11 +34,12 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
           <li>
             <div
               className="pageChange"
+              id="home"
               onClick={goTo0}
               role="button"
               tabIndex={0}
             >
-              Home
+              Home{" "}
             </div>
           </li>
           <li>
