@@ -8,13 +8,6 @@
     --margin-city: 1rem;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-
 .navbar {
     display: flex;
     justify-content: center;
@@ -55,7 +48,7 @@ ul li {
     list-style: none;
 }
 
-ul li a {
+.pageChange {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,19 +57,7 @@ ul li a {
     text-shadow: 2px 2px 2px black;
     color: white;
     text-decoration: none;
-}
-
-
-ul li a:hover {
-    color: black;
-}
-
-
-.home {
-    display: flex;
-    position: relative;
-    font-size: 1.8rem;
-    margin-top: 2px;
+    z-index: 5;
 }
 
 .pokeball img {

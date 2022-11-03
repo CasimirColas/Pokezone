@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from "prop-types";
 import React from "react";
-import "../css/navbar.css";
+import "./css/navbar.css";
 import Pokeball from "../../assets/images/Pokeball.png";
 import Ultraball from "../../assets/images/Ultraball.png";
 
@@ -10,34 +12,63 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
       <nav className={onPage === 0 ? "navbar-red" : "navbar"}>
         <ul>
           <li>
-            <button type="submit" onClick={goTo3}>
+            <div
+              className="pageChange"
+              role="button"
+              tabIndex={0}
+              onClick={goTo3}
+            >
               PokeCatch
-            </button>
+            </div>
           </li>
           <li>
-            <button type="submit" onClick={goTo1}>
+            <div
+              className="pageChange"
+              role="button"
+              tabIndex={0}
+              onClick={goTo1}
+            >
               PokeFight
-            </button>
+            </div>
           </li>
           <li>
-            <button type="submit" onClick={goTo0} className="home">
-              Home{" "}
-            </button>
+            <div
+              className="pageChange"
+              onClick={goTo0}
+              role="button"
+              tabIndex={0}
+            >
+              Home
+            </div>
           </li>
           <li>
-            <button type="submit" onClick={goTo2}>
+            <div
+              className="pageChange"
+              role="button"
+              tabIndex={0}
+              onClick={goTo2}
+            >
               PokeFeed
-            </button>
+            </div>
           </li>
           <li>
-            <button type="submit" onClick={goTo4}>
+            <div
+              className="pageChange"
+              role="button"
+              tabIndex={0}
+              onClick={goTo4}
+            >
               PokeDex
-            </button>
+            </div>
           </li>
         </ul>
       </nav>
       <div className={onPage === 0 ? "ultraball" : "pokeball"}>
-        <img src={onPage === 0 ? Ultraball : Pokeball} alt="pokeball" />
+        <img
+          src={onPage === 0 ? Ultraball : Pokeball}
+          alt="pokeball"
+          onClick={goTo0}
+        />
       </div>
     </header>
   );
