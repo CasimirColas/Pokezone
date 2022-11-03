@@ -15,12 +15,49 @@ function Pokefight() {
     const nb = Math.floor(Math.random() * tab.length);
     return tab[nb];
   }
+  function isDamage(nameM) {
+    return axios
+      .get(`https://pokeapi.co/api/v2/move/${nameM}`)
+      .then((response) => response.data)
+      .then((data) => {
+        const moveData = data;
+        if (
+          moveData.damage_class.name === "physical" ||
+          moveData.damage_class.name === "special"
+        ) {
+          return nameM;
+        }
+        return null;
+      });
+  }
+  // function getRandomAttack(nameM) {
+  //   return axios
+  //     .get(`https://pokeapi.co/api/v2/move/${nameM}`)
+  //     .then((response) => response.data)
+  //     .then((data) => {
+  //       const moveData = data;
+  //       const attack = {
+  //         accuracy: moveData.accuracy,
+  //         power: moveData.power,
+  //         type: moveData.type.name,
+  //       };
+  //       return attack;
+  //     });
+  // }
   function createPoke(nameP) {
     return axios
       .get(`https://pokeapi.co/api/v2/pokemon/${nameP}`)
-      .then((response) => response.data)
+      .then((r) => r.data)
       .then((data) => {
         const pokedata = data;
+        const moveList = [];
+        pokedata.moves.forEach((e) => {
+          isDamage(e.move.name).then((r) => {
+            if (r) {
+              moveList.push(r);
+            }
+          });
+        });
         const pokemon = {
           name: nameP,
           image: pokedata.sprites.other["official-artwork"].front_default,
@@ -32,22 +69,22 @@ function Pokefight() {
           speed: pokedata.stats[5].base_stat,
           types: pokedata.types.map((e) => e.type.name),
           color: "",
-          attack1: "",
-          attack2: "",
-          attack3: "",
-          attack4: "",
+          attack1: "1",
+          attack2: "2",
+          attack3: "3",
+          attack4: "4",
         };
         return pokemon;
       });
   }
   function randomSet() {
-    createPoke(randomTab(names)).then((response) => setMyPoke(response));
-    createPoke(randomTab(names)).then((response) => setEnmyPoke(response));
+    createPoke(randomTab(names)).then((r) => setMyPoke(r));
+    createPoke(randomTab(names)).then((r) => setEnmyPoke(r));
   }
   useEffect(() => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon/?limit=151")
-      .then((response) => response.data)
+      .then((r) => r.data)
       .then((data) => {
         const u = data.results;
         const result = [];
@@ -55,8 +92,8 @@ function Pokefight() {
           result.push(e.name);
         });
         setNames(result);
-        createPoke(randomTab(result)).then((response) => setMyPoke(response));
-        createPoke(randomTab(result)).then((response) => setEnmyPoke(response));
+        createPoke(randomTab(result)).then((r) => setMyPoke(r));
+        createPoke(randomTab(result)).then((r) => setEnmyPoke(r));
       });
   }, []);
   if (!myPoke || !enmyPoke) {
