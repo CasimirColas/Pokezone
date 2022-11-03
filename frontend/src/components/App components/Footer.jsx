@@ -1,11 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
+import "../css/footer.css";
 
+// eslint-disable-next-line react/prop-types
 function Footer({ onPage }) {
   return (
-    <div>
-      <p>{onPage}</p>
-    </div>
+    <footer className={onPage === 0 ? "footer-red" : "footer"}>
+      <p>©PokeZone</p>
+    </footer>
   );
 }
 
@@ -13,7 +14,4 @@ export default Footer;
 
 Footer.defaultProps = {
   onPage: 0,
-};
-Footer.propTypes = {
-  onPage: PropTypes.number,
 };
