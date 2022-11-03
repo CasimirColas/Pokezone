@@ -5,9 +5,9 @@ import PokeUp from "../assets/images/PokeUp.png";
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import "animate.css";
 
-function PokeDex() {
+function Pokedex() {
   return (
-    <body>
+    <main>
       <div className="top_pokeball_parent">
         <img
           src={PokeUp}
@@ -15,6 +15,11 @@ function PokeDex() {
           alt="pokeup"
         />
       </div>
+
+      <div className="poke_list_parent">
+        <div id="pokedex_back" />
+      </div>
+
       <div className="bottom_pokeball_parent">
         <img
           src={PokeDown}
@@ -22,11 +27,8 @@ function PokeDex() {
           alt="pokedown"
         />
       </div>
-      <div className="poke_list_parent">
-        <article />
-      </div>
-    </body>
+    </main>
   );
 }
 
-export default PokeDex;
+export default Pokedex;

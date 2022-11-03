@@ -11,29 +11,29 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
       <nav className={onPage === 0 ? "navbar-red" : "navbar"}>
         <ul>
           <li>
-            <a href="#" onClick={goTo3}>
+            <button type="submit" onClick={goTo3}>
               PokeCatch
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" onClick={goTo1}>
+            <button type="submit" onClick={goTo1}>
               PokeFight
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" onClick={goTo0} className="home">
+            <button type="submit" onClick={goTo0} className="home">
               Home{" "}
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" onClick={goTo2}>
+            <button type="submit" onClick={goTo2}>
               PokeFeed
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#" onClick={goTo4}>
+            <button type="submit" onClick={goTo4}>
               PokeDex
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

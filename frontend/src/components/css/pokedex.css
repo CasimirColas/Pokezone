@@ -14,9 +14,16 @@
   box-sizing: border-box;
 }
 
+#myContainer {
+  margin: 5%;
+  height: 45rem;
+  position: absolute;
+  background-image: url('./assets/images/Pokebackground.jpg');
+  box-shadow: none;
+}
 
 
-article {
+pokedex_back {
   margin: 5%;
   opacity: 50%;
   height: 45rem;
