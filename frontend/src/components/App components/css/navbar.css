@@ -1,107 +1,96 @@
 /*CSS properties:*/
 
 :root {
-    --primary-color: #0A285F;
-    --secondary-color: #B0002D;
-    --light-gray: #ABA9BC;
-    --dark-gray: #767586;
-    --margin-city: 1rem;
+  --primary-color: #0a285f;
+  --secondary-color: #b0002d;
+  --light-gray: #aba9bc;
+  --dark-gray: #767586;
+  --margin-city: 1rem;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar,
+.navbar-red {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color: white;
+  box-shadow: 0px 2px 5px 1px gray;
+  border-bottom-left-radius: 10% 50%;
+  border-bottom-right-radius: 10% 50%;
 }
 
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 7vh;
-    width: 100%;
-    position: relative;
-    color: white;
-    box-shadow: 0px 2px 5px 1px gray;
-    background: var(--primary-color);
-    border-bottom-left-radius: 10% 50%;
-    border-bottom-right-radius: 10% 50%;
+  background: var(--primary-color);
 }
-
 .navbar-red {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 7vh;
-    width: 100%;
-    position: relative;
-    color: white;
-    box-shadow: 0px 2px 5px 1px gray;
-    background: var(--secondary-color);
-    border-bottom-left-radius: 10% 50%;
-    border-bottom-right-radius: 10% 50%;
+  background: var(--secondary-color);
 }
-
 
 ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 ul li {
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
 }
 
-ul li .pageChange {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.6rem;
-    font-size: 0.9rem;
-    text-shadow: 2px 2px 2px black;
-    color: white;
-    text-decoration: none;
+.pageChange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.3rem;
+  font-size: 0.7rem;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+  text-decoration: none;
 }
 
-ul li .pageChange:hover {
-    color: black;
+.pageChange:hover {
+  color: black;
 }
 
 #home {
-    display: flex;
-    position: relative;
-    font-size: 1.8rem;
-    margin-top: 2px;
+  display: flex;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pokeball img,
+.ultraball img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 9.5rem;
+  top: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
 }
 
 .pokeball img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0px 0px 0px 0px var(--primary-color);
-    margin-left: 12rem;
-    top: 2.7em;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-
+  border: 5px solid var(--primary-color);
+  box-shadow: 0px 0px 0px 0px var(--primary-color);
 }
 
 .ultraball img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    border: 5px solid var(--secondary-color);
-    box-shadow: 0px 0px 0px 0px var(--secondary-color);
-    margin-left: 12rem;
-    top: 2.7em;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-
+  border: 5px solid var(--secondary-color);
+  box-shadow: 0px 0px 0px 0px var(--secondary-color);
 }
+
