@@ -48,7 +48,6 @@ function PokefightALT() {
     return result;
   }
   async function createPoke(nameP, data, aList) {
-    console.warn(aList);
     const pokemon = {
       name: nameP,
       image: data.sprites.other["official-artwork"].front_default,
@@ -71,6 +70,7 @@ function PokefightALT() {
     const pokedata = response.data;
     const moveList = await getAttackList(pokedata.moves);
     const pokemon = await createPoke(nameP, pokedata, moveList);
+    console.error(moveList);
     return pokemon;
   }
   async function randomSet() {

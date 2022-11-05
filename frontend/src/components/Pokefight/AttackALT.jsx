@@ -22,7 +22,13 @@ function Attack({ pos, info }) {
     };
     return move;
   }
+  async function newAttack() {
+    setAttack(await getAttack(randomTab(info)));
+    console.warn(info, info.length);
+  }
   useEffect(() => {
+    console.warn(info, info.length);
+
     const fetchData = async () => {
       setAttack(await getAttack(randomTab(info)));
     };
@@ -36,6 +42,9 @@ function Attack({ pos, info }) {
       <p>
         {pos} {attack.name}
       </p>
+      <button type="submit" onClick={newAttack}>
+        New attack
+      </button>
     </div>
   );
 }
