@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // import App from "./App";
 // import Pokefight from "./pages/Pokefight";
-import PokefightALT from "./pages/PokefightALT";
+import PokefightALT2 from "./pages/PokefightALT2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <PokefightALT />
+    <PokefightALT2 />
   </React.StrictMode>
 );
