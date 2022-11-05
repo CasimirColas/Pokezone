@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AttackALT from "../components/Pokefight/AttackALT";
+import Attack from "../components/Pokefight/Attack";
 import FightingPoke from "../components/Pokefight/FightingPoke";
 import pokeVS from "../assets/pokeVS.png";
 
@@ -29,23 +29,32 @@ function PokefightALT() {
   async function isDmg(nameM) {
     const result = await axios.get(`https://pokeapi.co/api/v2/move/${nameM}`);
     const moveData = result.data;
-    if (
-      moveData.damage_class.name === "physical" ||
-      moveData.damage_class.name === "special"
-    ) {
+    if (moveData.power != null) {
       return true;
     }
     return false;
   }
   async function getAttackList(list) {
     const result = [];
-    list.forEach(async (e) => {
-      const test = await isDmg(e.move.name);
+    for await (const i of list) {
+      const test = await isDmg(i.move.name);
       if (test) {
-        result.push(e.move.name);
+        result.push(i.move.name);
       }
-    });
+    }
+
     return result;
+  }
+  async function getAttack(nameM) {
+    const response = await axios.get(`https://pokeapi.co/api/v2/move/${nameM}`);
+    const moveData = response.data;
+    const move = {
+      name: nameM,
+      accuracy: moveData.accuracy,
+      power: moveData.power,
+      type: moveData.type.name,
+    };
+    return move;
   }
   async function createPoke(nameP, data, aList) {
     const pokemon = {
@@ -59,7 +68,10 @@ function PokefightALT() {
       speed: data.stats[5].base_stat,
       types: data.types.map((e) => e.type.name),
       color: "",
-      attackList: aList,
+      attack1: await getAttack(randomTab(aList)),
+      attack2: await getAttack(randomTab(aList)),
+      attack3: await getAttack(randomTab(aList)),
+      attack4: await getAttack(randomTab(aList)),
     };
     return pokemon;
   }
@@ -70,7 +82,6 @@ function PokefightALT() {
     const pokedata = response.data;
     const moveList = await getAttackList(pokedata.moves);
     const pokemon = await createPoke(nameP, pokedata, moveList);
-    console.error(moveList);
     return pokemon;
   }
   async function randomSet() {
@@ -106,10 +117,10 @@ function PokefightALT() {
         <FightingPoke player={1} pokemon={enmyPoke} />
       </div>
       <div className="abilities">
-        <AttackALT pos={1} info={myPoke.attackList} />
-        <AttackALT pos={2} info={myPoke.attackList} />
-        <AttackALT pos={3} info={myPoke.attackList} />
-        <AttackALT pos={4} info={myPoke.attackList} />
+        <Attack pos={1} info={myPoke.attack1} />
+        <Attack pos={2} info={myPoke.attack2} />
+        <Attack pos={3} info={myPoke.attack3} />
+        <Attack pos={4} info={myPoke.attack4} />
       </div>
       <footer>Pokefooter</footer>
     </div>
