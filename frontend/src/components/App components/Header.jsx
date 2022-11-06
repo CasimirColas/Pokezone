@@ -39,7 +39,10 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
               role="button"
               tabIndex={0}
             >
-              Home{" "}
+              <h2>Home</h2>
+              <div className={onPage === 0 ? "ultraball" : "pokeball"}>
+                <img src={onPage === 0 ? Ultraball : Pokeball} alt="pokeball" />
+              </div>
             </div>
           </li>
           <li>
@@ -64,13 +67,6 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
           </li>
         </ul>
       </nav>
-      <div className={onPage === 0 ? "ultraball" : "pokeball"}>
-        <img
-          src={onPage === 0 ? Ultraball : Pokeball}
-          alt="pokeball"
-          onClick={goTo0}
-        />
-      </div>
     </header>
   );
 }
