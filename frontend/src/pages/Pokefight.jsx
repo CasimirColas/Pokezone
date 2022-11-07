@@ -3,6 +3,7 @@ import axios from "axios";
 import Attack from "../components/Pokefight/Attack";
 import FightingPoke from "../components/Pokefight/FightingPoke";
 import pokeVS from "../assets/pokeVS.png";
+import effect from "../components/Pokefight/effectiveness";
 import "./css/pokefight.css";
 
 function Pokefight() {
@@ -53,7 +54,8 @@ function Pokefight() {
       name: nameM,
       accuracy: moveData.accuracy,
       power: moveData.power,
-      type: moveData.type.name,
+      type: moveData.damage_class.name,
+      el: moveData.type.name,
     };
     return move;
   }
@@ -89,6 +91,43 @@ function Pokefight() {
     setMyPoke(await initiatePoke(randomTab(names)));
     setEnmyPoke(await initiatePoke(randomTab(names)));
   }
+  function stab(el, list) {
+    if (list.includes(el)) {
+      return 1.5;
+    }
+    return 1;
+  }
+  function calcDMG(pokA, pokD, atk) {
+    const random = (Math.random() * (255 - 217 + 1) + 217) / 255;
+    let dmgDone = 0;
+    if (atk.type === "physical") {
+      dmgDone =
+        ((42 * atk.power * (pokA.a / pokD.d)) / 50 + 2) *
+        stab(atk.el, pokA.types) *
+        effect[pokD.types[0]][atk.el];
+      if (pokD.types.length === 2) {
+        dmgDone *= effect[pokD.types[1]][atk.el];
+      }
+      if (dmgDone > 2) {
+        dmgDone *= random;
+      }
+    } else if (atk.type === "special") {
+      dmgDone =
+        ((42 * atk.power * (pokA.as / pokD.ds)) / 50 + 2) *
+        stab(atk.el, pokA.types) *
+        effect[pokD.types[0]][atk.el];
+      if (pokD.types.length === 2) {
+        dmgDone *= effect[pokD.types[1]][atk.el];
+      }
+      if (dmgDone > 2) {
+        dmgDone *= random;
+      }
+    }
+    return Math.round(dmgDone);
+  }
+  function dealDMG(pokA, pokD, atk) {
+    console.warn(calcDMG(pokA, pokD, atk));
+  }
   useEffect(() => {
     const fetchData = async () => {
       const genList = await getListOfNames();
@@ -108,7 +147,7 @@ function Pokefight() {
         New set
       </button>
       <div className="versusbar">
-        <h3>{myPoke.name}</h3>
+        <h3>{myPoke.name} - le mien</h3>
         <img src={pokeVS} alt="not found" />
         <h3>{enmyPoke.name}</h3>
       </div>
@@ -116,6 +155,12 @@ function Pokefight() {
         <FightingPoke player={0} pokemon={myPoke} />
         <FightingPoke player={1} pokemon={enmyPoke} />
       </div>
+      <button
+        type="submit"
+        onClick={() => dealDMG(myPoke, enmyPoke, myPoke.attack1)}
+      >
+        Attack
+      </button>
       <div className="abilities">
         <Attack pos={1} info={myPoke.attack1} />
         <Attack pos={2} info={myPoke.attack2} />
