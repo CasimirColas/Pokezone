@@ -1,34 +1,10 @@
 .compgeneral {
-    max-height: 70vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2fr 5fr 1fr 1fr;
-    grid-template-areas: 
-    "a a a a"
-    "b b b b"
-    "f e e c"
-    "x x x x"
-    ;
-}
-
-.compnavpokemonappears {
-    grid-area: a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.compplayagain {
-    grid-area: e;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.comptips {
-    position: absolute;
-    top: 70vh;
-    right: 0vh;
+img {
+    max-width: 250px
 }
-

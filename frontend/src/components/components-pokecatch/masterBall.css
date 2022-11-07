@@ -1,0 +1,8 @@
+
+
+.masterBall {
+    width: 150px;
+    height: 150px;
+    background-image: url(../../assets/master_ball.png);
+    background-size: contain;
+}
