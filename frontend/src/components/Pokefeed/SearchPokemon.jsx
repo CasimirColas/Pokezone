@@ -1,18 +1,18 @@
-/* eslint-disable react/prop-types */
-import React from "react";
+import React, { useState } from "react";
 import "./Pokefeed.css";
 
-function SearchPokemon(props) {
-  const { searchPokemon, filteredSearchPokemon } = props;
+const [pokemon, useNewPokemon] = useState("");
+
+function SearchPokemon() {
   return (
     <div>
       <form className="pokemon-search">
         <input
           className="search-field"
-          value={searchPokemon}
+          value={pokemon}
           type="text"
           placeholder="Choose your Pokemon"
-          onChange={(event) => filteredSearchPokemon(event.target.value)}
+          onChange={(event) => useNewPokemon(event.target.value)}
         />
       </form>
     </div>
