@@ -1,11 +1,11 @@
-import SearchPokemon from "../components/Pokefeed/SearchPokemon";
+import React from "react";
 
-function App() {
+function Pokefeed() {
   return (
-    <div className="App">
-      <SearchPokemon />
+    <div>
+      <p>Pokefeed</p>
     </div>
   );
 }
 
-export default App;
+export default Pokefeed;
