@@ -1,0 +1,47 @@
+/*CSS properties:*/
+
+:root {
+    --primary-color: #0A285F;
+    --secondary-color: #B0002D;
+    --light-gray: #ABA9BC;
+    --dark-gray: #767586;
+    --margin-city: 1rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    font-size: 1rem;
+    width: 100vw;
+    height: 3vh;
+    color: white;
+    background: var(--primary-color);
+    border-top-left-radius: calc(100vh*0.04) calc(100vh*0.04);
+    border-top-right-radius: calc(100vh*0.04) calc(100vh*0.04);
+}
+
+.footer p {
+    text-shadow: 2px 2px 2px black;
+}
+
+.footer-red {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    font-size: 1rem;
+    height: 3vh;
+    color: white;
+    background: var(--secondary-color);
+    border-top-left-radius: calc(100vh*0.04) calc(100vh*0.04);
+    border-top-right-radius: calc(100vh*0.04) calc(100vh*0.04);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-red p {
+    text-shadow: 2px 2px 2px black;
+}
