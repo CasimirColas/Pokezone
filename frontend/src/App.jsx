@@ -6,7 +6,6 @@ import Pokecatch from "./pages/Pokecatch";
 import Pokedex from "./pages/Pokedex";
 import Header from "./components/App components/Header";
 import Footer from "./components/App components/Footer";
-
 import "./App.css";
 
 function App() {

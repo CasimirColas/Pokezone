@@ -1,27 +1,72 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from "prop-types";
 import React from "react";
+import "./css/navbar.css";
+import Pokeball from "../../assets/images/Pokeball.png";
+import Ultraball from "../../assets/images/Ultraball.png";
 
 function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
   return (
     <header>
-      <div className="Navigator">
-        <button type="submit" onClick={goTo0}>
-          Index
-        </button>
-        <button type="submit" onClick={goTo1}>
-          Pokefigh
-        </button>
-        <button type="submit" onClick={goTo2}>
-          Pokecatch
-        </button>
-        <button type="submit" onClick={goTo3}>
-          Pokefeed
-        </button>
-        <button type="submit" onClick={goTo4}>
-          Pokedex
-        </button>
-        <p>{onPage}</p>
-      </div>
+      <nav className={onPage === 0 ? "navbar-red" : "navbar"}>
+        <ul>
+          <li>
+            <div
+              className="pageChange"
+              role="button"
+              tabIndex={0}
+              onClick={goTo3}
+            >
+              PokeCatch
+            </div>
+          </li>
+          <li>
+            <div
+              className="pageChange"
+              role="button"
+              tabIndex={0}
+              onClick={goTo1}
+            >
+              PokeFight
+            </div>
+          </li>
+          <li>
+            <div
+              className="pageChange"
+              id="home"
+              onClick={goTo0}
+              role="button"
+              tabIndex={0}
+            >
+              <h2>Home</h2>
+              <div className={onPage === 0 ? "ultraball" : "pokeball"}>
+                <img src={onPage === 0 ? Ultraball : Pokeball} alt="pokeball" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div
+              className="pageChange"
+              role="button"
+              tabIndex={0}
+              onClick={goTo2}
+            >
+              PokeFeed
+            </div>
+          </li>
+          <li>
+            <div
+              className="pageChange"
+              role="button"
+              tabIndex={0}
+              onClick={goTo4}
+            >
+              PokeDex
+            </div>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }
