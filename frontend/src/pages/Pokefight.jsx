@@ -10,6 +10,7 @@ function Pokefight() {
   const [names, setNames] = useState();
   const [myPoke, setMyPoke] = useState();
   const [enmyPoke, setEnmyPoke] = useState();
+  const [gameState, setGameState] = useState(0);
   function randomTab(tab) {
     if (!tab) {
       return tab;
@@ -31,7 +32,7 @@ function Pokefight() {
   async function isDmg(nameM) {
     const result = await axios.get(`https://pokeapi.co/api/v2/move/${nameM}`);
     const moveData = result.data;
-    if (moveData.power != null) {
+    if (moveData.power != null && moveData.accuracy != null) {
       return true;
     }
     return false;
@@ -52,7 +53,8 @@ function Pokefight() {
     const moveData = response.data;
     const move = {
       name: nameM,
-      accuracy: moveData.accuracy,
+      prio: moveData.priority,
+      acc: moveData.accuracy,
       power: moveData.power,
       type: moveData.damage_class.name,
       el: moveData.type.name,
@@ -63,12 +65,12 @@ function Pokefight() {
     const pokemon = {
       name: nameP,
       image: data.sprites.other["official-artwork"].front_default,
-      hp: data.stats[0].base_stat,
-      a: data.stats[1].base_stat,
-      as: data.stats[3].base_stat,
-      d: data.stats[2].base_stat,
-      ds: data.stats[4].base_stat,
-      speed: data.stats[5].base_stat,
+      hp: data.stats[0].base_stat * 2 + 110,
+      a: data.stats[1].base_stat * +5,
+      as: data.stats[3].base_stat * +5,
+      d: data.stats[2].base_stat * +5,
+      ds: data.stats[4].base_stat * +5,
+      speed: data.stats[5].base_stat * +5,
       types: data.types.map((e) => e.type.name),
       color: "",
       attack1: await getAttack(randomTab(aList)),
@@ -125,8 +127,82 @@ function Pokefight() {
     }
     return Math.round(dmgDone);
   }
-  function dealDMG(pokA, pokD, atk) {
-    console.warn(calcDMG(pokA, pokD, atk));
+  function gameMSG(e) {
+    switch (e) {
+      case 0:
+        return "on going";
+
+      case 1:
+        return "victory";
+
+      case 2:
+        return "defeat";
+
+      default:
+        return "something is wrong";
+    }
+  }
+  function dealDMG(atk) {
+    if (myPoke.hp === 0 || enmyPoke.hp === 0) {
+      return;
+    }
+    const enmyAtk = enmyPoke[`attack${Math.floor(Math.random() * 4) + 1}`];
+    let isFirst = myPoke;
+    let isSecond = enmyPoke;
+    if (atk.prio < enmyAtk.prio) {
+      isFirst = enmyPoke;
+      isSecond = myPoke;
+    } else if (myPoke.speed < enmyPoke.speed) {
+      isFirst = enmyPoke;
+      isSecond = myPoke;
+    }
+    if (isFirst === myPoke) {
+      if (atk.acc >= Math.floor(Math.random() * 101)) {
+        if (enmyPoke.hp - calcDMG(myPoke, enmyPoke, atk) < 0) {
+          setEnmyPoke({ ...enmyPoke, hp: 0 });
+          setGameState(1);
+          return;
+        }
+        setEnmyPoke({
+          ...enmyPoke,
+          hp: enmyPoke.hp - calcDMG(myPoke, enmyPoke, atk),
+        });
+      }
+      if (enmyAtk.acc >= Math.floor(Math.random() * 101)) {
+        if (myPoke.hp - calcDMG(enmyPoke, myPoke, enmyAtk) < 0) {
+          setMyPoke({ ...myPoke, hp: 0 });
+          setGameState(2);
+          return;
+        }
+        setMyPoke({
+          ...myPoke,
+          hp: myPoke.hp - calcDMG(enmyPoke, myPoke, enmyAtk),
+        });
+      }
+    } else if (isSecond === myPoke) {
+      if (enmyAtk.acc >= Math.floor(Math.random() * 101)) {
+        if (myPoke.hp - calcDMG(enmyPoke, myPoke, enmyAtk) < 0) {
+          setMyPoke({ ...myPoke, hp: 0 });
+          setGameState(2);
+          return;
+        }
+        setMyPoke({
+          ...myPoke,
+          hp: myPoke.hp - calcDMG(enmyPoke, myPoke, enmyAtk),
+        });
+      }
+      if (atk.acc >= Math.floor(Math.random() * 101)) {
+        if (enmyPoke.hp - calcDMG(myPoke, enmyPoke, atk) < 0) {
+          setEnmyPoke({ ...enmyPoke, hp: 0 });
+          setGameState(1);
+          return;
+        }
+        setEnmyPoke({
+          ...enmyPoke,
+          hp: enmyPoke.hp - calcDMG(myPoke, enmyPoke, atk),
+        });
+      }
+    }
   }
   useEffect(() => {
     const fetchData = async () => {
@@ -155,10 +231,10 @@ function Pokefight() {
         <FightingPoke player={0} pokemon={myPoke} />
         <FightingPoke player={1} pokemon={enmyPoke} />
       </div>
-      <button
-        type="submit"
-        onClick={() => dealDMG(myPoke, enmyPoke, myPoke.attack1)}
-      >
+      <h3>My hp {myPoke.hp}</h3>
+      <h3>Enmy hp {enmyPoke.hp}</h3>
+      <h3>{gameMSG(gameState)}</h3>
+      <button type="submit" onClick={() => dealDMG(myPoke.attack1)}>
         Attack
       </button>
       <div className="abilities">
