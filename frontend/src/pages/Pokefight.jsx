@@ -234,14 +234,33 @@ function Pokefight() {
       <h3>My hp {myPoke.hp}</h3>
       <h3>Enmy hp {enmyPoke.hp}</h3>
       <h3>{gameMSG(gameState)}</h3>
-      <button type="submit" onClick={() => dealDMG(myPoke.attack1)}>
-        Attack
-      </button>
       <div className="abilities">
-        <Attack pos={1} info={myPoke.attack1} />
-        <Attack pos={2} info={myPoke.attack2} />
-        <Attack pos={3} info={myPoke.attack3} />
-        <Attack pos={4} info={myPoke.attack4} />
+        <Attack
+          pos={1}
+          info={myPoke.attack1}
+          onClick={() => {
+            dealDMG(myPoke.attack1);
+          }}
+        />
+        <Attack
+          pos={2}
+          info={myPoke.attack2}
+          onClick={() => {
+            dealDMG(myPoke.attack2);
+          }}
+        />
+        <Attack
+          pos={3}
+          info={myPoke.attack3}
+          onClick={() => dealDMG(myPoke.attack3)}
+        />
+        <Attack
+          pos={4}
+          info={myPoke.attack4}
+          onClick={() => {
+            dealDMG(myPoke.attack4);
+          }}
+        />
       </div>
     </div>
   );

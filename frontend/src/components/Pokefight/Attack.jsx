@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from "prop-types";
 import React from "react";
 
-function Attack({ pos, info }) {
+function Attack({ pos, info, onClick }) {
   return (
-    <div className="attack">
+    <div className="attack" role="button" tabIndex={-4 - pos} onClick={onClick}>
       <p>
         {pos} name: {info.name} acc:{info.acc} power:{info.power}
       </p>
@@ -19,6 +20,7 @@ Attack.defaultProps = {
 };
 
 Attack.propTypes = {
+  onClick: PropTypes.func.isRequired,
   pos: PropTypes.number,
   info: PropTypes.shape({
     name: PropTypes.string,
