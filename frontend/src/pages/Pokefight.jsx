@@ -223,13 +223,13 @@ function Pokefight() {
         New set
       </button>
       <div className="versusbar">
-        <h3>{myPoke.name} - le mien</h3>
+        <h3>{myPoke.name}</h3>
         <img src={pokeVS} alt="not found" />
         <h3>{enmyPoke.name}</h3>
       </div>
       <div className="terrain">
-        <FightingPoke player={0} pokemon={myPoke} />
         <FightingPoke player={1} pokemon={enmyPoke} />
+        <FightingPoke player={0} pokemon={myPoke} />
       </div>
       <h3>My hp {myPoke.hp}</h3>
       <h3>Enmy hp {enmyPoke.hp}</h3>

@@ -3,7 +3,7 @@ import React from "react";
 
 function FightingPoke({ player, pokemon }) {
   return (
-    <div className="pokemon">
+    <div className={`pokemon${player}`}>
       <h4>{pokemon.name}</h4>
       <p>{player}</p>
       <img src={pokemon.image} alt="not found" />
