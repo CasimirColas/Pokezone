@@ -6,31 +6,31 @@ import "animate.css";
 
 function Index() {
   return (
-    <div className="pokemon">
-      <img src={Pokemon2} width="250px" height="170px" alt="pokemon" />
-      <div className="animate__animated animate__zoomInDown animate__delay-0.5s">
-        <p>PokeZone</p>
+    <div className="page-index">
+      <img src={Pokemon2} alt="pokemon" />
+      <div className="pokezone animate__animated animate__zoomInDown animate__delay-0.5s">
+        <h1>PokeZone</h1>
       </div>
 
       <section>
         <article className="pokecatch">
-          <div>PokeCatch</div>
-          <div className="box">Play to catch some Pokemons !</div>
+          <h2>PokeCatch</h2>
+          <p className="box">Play to catch some Pokemons !</p>
         </article>
 
         <article className="pokefight">
-          <div className="box2">Play to fight the Pokemons !</div>
-          <div>PokeFight</div>
+          <h2>PokeFight</h2>
+          <p className="box2">Play to fight the Pokemons !</p>
         </article>
 
         <article className="pokefeed">
-          <div>PokeFeed</div>
-          <div className="box">Feed the Pokemons to evolve them!</div>
+          <h2>PokeFeed</h2>
+          <p className="box">Feed the Pokemons to evolve them!</p>
         </article>
 
         <article className="pokedex">
-          <div className="box2">Search any Pokemons you want!</div>
-          <div>PokeDex</div>
+          <h2>PokeDex</h2>
+          <p className="box2">Search any Pokemons you want!</p>
         </article>
       </section>
     </div>

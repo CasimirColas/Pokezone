@@ -15,10 +15,7 @@ function Pokedex() {
           alt="pokeup"
         />
       </div>
-
-      <div id="myContainer">
-        <div id="pokedex_back" />
-      </div>
+      <div className="pokeListBack animate__animated animate__hiddenShow" />
 
       <div className="bottom_pokeball_parent">
         <img
