@@ -46,14 +46,32 @@
     gap: 30px;
 }
 .attack1, .attack2, .attack3, .attack4 {
+    cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 2rem;
+    justify-content: center;
+    padding: 1.2rem;
     font-size: 1.5rem;
-    border: 1px solid black;
+    border: 3px solid;
     border-radius: 15px 0px;
     max-width: 500px;
     max-height: 120px;
+}
+.attack1:hover{
+    background-color: red;
+    box-shadow: -7px 8px 9px -2px #767586;
+}
+.attack2:hover{
+    background-color: red;
+    box-shadow: -7px 8px 9px -2px #767586;
+}
+.attack3:hover{
+    background-color: red;
+    box-shadow: -7px 8px 9px -2px #767586;
+}
+.attack4:hover{
+    background-color: red;
+    box-shadow: -7px 8px 9px -2px #767586;
 }
 .imgPoke {
     width: 50%;

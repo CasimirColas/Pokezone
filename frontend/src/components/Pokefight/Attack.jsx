@@ -1,21 +1,25 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from "prop-types";
 import React from "react";
+import colors from "../../assets/pokemonColorPicker";
 
 function Attack({ pos, info, onClick }) {
   const imgtype = `${info.el}.png`;
+  const colorMatch = {
+    backgroundColor: `rgba(${colors[`${info.el}`].rgb}, 0.5)`,
+    borderColor: `#${colors[`${info.el}`].hex}`,
+  };
   return (
     <div
       className={`attack${pos}`}
       role="button"
       tabIndex={-4 - pos}
       onClick={onClick}
+      style={colorMatch}
     >
       <p>
         {pos} name: {info.name} acc:{info.acc} power:{info.power}
-      </p>
-      <p>
-        type:{info.type} element:{info.el} prio:{info.prio}
+        type:{info.type}
       </p>
       <img className="icontype" src={imgtype} alt="something went wrong" />
     </div>
