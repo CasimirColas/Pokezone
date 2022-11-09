@@ -6,7 +6,7 @@ function FightingPoke({ player, pokemon }) {
     <div className={`pokemon${player}`}>
       <h4>{pokemon.name}</h4>
       <p>{pokemon.hp}</p>
-      <img src={pokemon.image} alt="not found" />
+      <img className="imgPoke" src={pokemon.image} alt="not found" />
     </div>
   );
 }
