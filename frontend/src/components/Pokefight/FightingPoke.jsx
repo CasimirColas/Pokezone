@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
+import colors from "../../assets/pokemonColorPicker";
 
-function FightingPoke({ player, baseHP, hp, name, image }) {
+function FightingPoke({ player, baseHP, hp, name, image, types }) {
   function hpcolor(num) {
     if (num > 50) {
       return "#00ff00";
@@ -14,6 +15,18 @@ function FightingPoke({ player, baseHP, hp, name, image }) {
     }
     return "none";
   }
+  function setStyle(type) {
+    return {
+      backgroundColor: `rgba(${colors[`${type}`].rgb}, 0.5)`,
+      borderColor: `#${colors[`${type}`].hex}`,
+    };
+  }
+  function secondType(val) {
+    if (val) {
+      return <p style={setStyle(types[1])}>{val}</p>;
+    }
+    return null;
+  }
   const currenthp = {
     backgroundColor: hpcolor(Math.floor((hp / baseHP) * 100)),
     width: `${Math.floor((hp / baseHP) * 100)}%`,
@@ -21,6 +34,10 @@ function FightingPoke({ player, baseHP, hp, name, image }) {
   return (
     <div className={`pokemon${player}`}>
       <h4>{name}</h4>
+      <div className="types">
+        <p style={setStyle(types[0])}>{types[0]}</p>
+        {secondType(types[1])}
+      </div>
       <div className="hpbar">
         <div className="currenthp" style={currenthp}>
           <p>{hp}</p>
@@ -37,6 +54,7 @@ FightingPoke.defaultProps = {
   hp: 100,
   name: "placeholder name",
   image: "placeholder image",
+  types: ["normal"],
 };
 
 FightingPoke.propTypes = {
@@ -45,6 +63,7 @@ FightingPoke.propTypes = {
   hp: PropTypes.number,
   name: PropTypes.string,
   image: PropTypes.string,
+  types: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FightingPoke;

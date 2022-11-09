@@ -48,6 +48,20 @@
 .currenthp p {
     margin-left: 20px;
 }
+.types {
+    margin-block: 0.4rem;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+.types p {
+    font-size: 70%;
+    padding-block: 1%;
+    padding-inline: 3%;
+    border: 1px solid #0A285F;
+    border-radius: 40px;
+}
 .abilities {
     margin: 2rem;
     display: flex;

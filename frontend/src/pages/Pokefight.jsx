@@ -247,6 +247,7 @@ function Pokefight() {
           hp={enmyPoke.hp}
           name={enmyPoke.name}
           image={enmyPoke.image}
+          types={enmyPoke.types}
         />
         <FightingPoke
           player={0}
@@ -254,6 +255,7 @@ function Pokefight() {
           hp={myPoke.hp}
           name={myPoke.name}
           image={myPoke.image}
+          types={myPoke.types}
         />
       </div>
       <div className="abilities">
