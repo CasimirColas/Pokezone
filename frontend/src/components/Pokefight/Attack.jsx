@@ -4,7 +4,12 @@ import React from "react";
 
 function Attack({ pos, info, onClick }) {
   return (
-    <div className="attack" role="button" tabIndex={-4 - pos} onClick={onClick}>
+    <div
+      className={`attack${pos}`}
+      role="button"
+      tabIndex={-4 - pos}
+      onClick={onClick}
+    >
       <p>
         {pos} name: {info.name} acc:{info.acc} power:{info.power}
       </p>

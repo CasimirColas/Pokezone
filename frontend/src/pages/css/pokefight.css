@@ -1,5 +1,5 @@
 .Pokefight {
-    padding-top: 10vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
 }
@@ -8,14 +8,56 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    max-height: 75px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #0A285F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .versusbar h3{
-    padding-inline: 5rem;
+    font-size: 3rem;
+    margin-inline: 5rem;
+}
+.terrain {
+    margin-block: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.pokemon1 {
+    font-size: 1.5rem;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+}
+.pokemon0 {
+    font-size: 1.5rem;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
 }
 .abilities {
+    margin: 2rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
-.attack {
-    padding: 1rem;
+.attack1, .attack2, .attack3, .attack4 {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    font-size: 1.5rem;
+    border: 1px solid black;
+    border-radius: 15px 0px;
+    max-width: 500px;
+    max-height: 120px;
+}
+img {
+    width: 50%;
+}
+.vsimg {
+    width: 15%;
 }

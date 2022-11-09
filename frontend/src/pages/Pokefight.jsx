@@ -90,6 +90,7 @@ function Pokefight() {
     return pokemon;
   }
   async function randomSet() {
+    setGameState(0);
     setMyPoke(await initiatePoke(randomTab(names)));
     setEnmyPoke(await initiatePoke(randomTab(names)));
   }
@@ -222,18 +223,18 @@ function Pokefight() {
       <button type="submit" onClick={randomSet}>
         New set
       </button>
+      <h3>{gameMSG(gameState)}</h3>
       <div className="versusbar">
-        <h3>{myPoke.name}</h3>
-        <img src={pokeVS} alt="not found" />
-        <h3>{enmyPoke.name}</h3>
+        <h3>{myPoke.name.charAt(0).toUpperCase() + myPoke.name.slice(1)}</h3>
+        <img className="vsimg" src={pokeVS} alt="not found" />
+        <h3>
+          {enmyPoke.name.charAt(0).toUpperCase() + enmyPoke.name.slice(1)}
+        </h3>
       </div>
       <div className="terrain">
         <FightingPoke player={1} pokemon={enmyPoke} />
         <FightingPoke player={0} pokemon={myPoke} />
       </div>
-      <h3>My hp {myPoke.hp}</h3>
-      <h3>Enmy hp {enmyPoke.hp}</h3>
-      <h3>{gameMSG(gameState)}</h3>
       <div className="abilities">
         <Attack
           pos={1}
