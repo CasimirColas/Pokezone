@@ -1,39 +1,50 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-function FightingPoke({ player, pokemon }) {
+function FightingPoke({ player, baseHP, hp, name, image }) {
+  function hpcolor(num) {
+    if (num > 50) {
+      return "#00ff00";
+    }
+    if (num > 20) {
+      return "#ffff00";
+    }
+    if (num > 0) {
+      return "#cc0000";
+    }
+    return "none";
+  }
+  const currenthp = {
+    backgroundColor: hpcolor(Math.floor((hp / baseHP) * 100)),
+    width: `${Math.floor((hp / baseHP) * 100)}%`,
+  };
   return (
     <div className={`pokemon${player}`}>
-      <h4>{pokemon.name}</h4>
-      <p>{pokemon.hp}</p>
-      <img className="imgPoke" src={pokemon.image} alt="not found" />
+      <h4>{name}</h4>
+      <div className="hpbar">
+        <div className="currenthp" style={currenthp}>
+          <p>{hp}</p>
+        </div>
+      </div>
+      <img className="imgPoke" src={image} alt="not found" />
     </div>
   );
 }
 
 FightingPoke.defaultProps = {
   player: 1,
-  pokemon: "a pokemon",
+  baseHP: 100,
+  hp: 100,
+  name: "placeholder name",
+  image: "placeholder image",
 };
 
 FightingPoke.propTypes = {
   player: PropTypes.number,
-  pokemon: PropTypes.shape({
-    name: PropTypes.string,
-    image: PropTypes.string,
-    hp: PropTypes.number,
-    a: PropTypes.number,
-    as: PropTypes.number,
-    d: PropTypes.number,
-    ds: PropTypes.number,
-    speed: PropTypes.number,
-    types: PropTypes.arrayOf(PropTypes.string),
-    color: PropTypes.string,
-    attack1: PropTypes.string,
-    attack2: PropTypes.string,
-    attack3: PropTypes.string,
-    attack4: PropTypes.string,
-  }),
+  baseHP: PropTypes.number,
+  hp: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default FightingPoke;

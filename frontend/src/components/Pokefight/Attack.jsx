@@ -38,7 +38,7 @@ Attack.propTypes = {
     prio: PropTypes.number,
     acc: PropTypes.number,
     power: PropTypes.number,
-    type: PropTypes.number,
+    type: PropTypes.string,
     el: PropTypes.string,
   }),
 };

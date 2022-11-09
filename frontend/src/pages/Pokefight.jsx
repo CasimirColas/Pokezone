@@ -65,6 +65,7 @@ function Pokefight() {
     const pokemon = {
       name: nameP,
       image: data.sprites.other["official-artwork"].front_default,
+      baseHP: data.stats[0].base_stat * 2 + 110,
       hp: data.stats[0].base_stat * 2 + 110,
       a: data.stats[1].base_stat * +5,
       as: data.stats[3].base_stat * +5,
@@ -205,6 +206,14 @@ function Pokefight() {
       }
     }
   }
+  // function validate(pok) {
+  //   for (const [, value] of Object.entries(pok)) {
+  //     if (!value) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // }
   useEffect(() => {
     const fetchData = async () => {
       const genList = await getListOfNames();
@@ -232,8 +241,20 @@ function Pokefight() {
         </h3>
       </div>
       <div className="terrain">
-        <FightingPoke player={1} pokemon={enmyPoke} />
-        <FightingPoke player={0} pokemon={myPoke} />
+        <FightingPoke
+          player={1}
+          baseHP={enmyPoke.baseHP}
+          hp={enmyPoke.hp}
+          name={enmyPoke.name}
+          image={enmyPoke.image}
+        />
+        <FightingPoke
+          player={0}
+          baseHP={myPoke.baseHP}
+          hp={myPoke.hp}
+          name={myPoke.name}
+          image={myPoke.image}
+        />
       </div>
       <div className="abilities">
         <Attack
