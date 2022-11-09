@@ -55,9 +55,12 @@
     max-width: 500px;
     max-height: 120px;
 }
-img {
+.imgPoke {
     width: 50%;
 }
 .vsimg {
+    width: 15%;
+}
+.icontype {
     width: 15%;
 }

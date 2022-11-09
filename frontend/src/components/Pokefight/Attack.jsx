@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 function Attack({ pos, info, onClick }) {
+  const imgtype = `${info.el}.png`;
   return (
     <div
       className={`attack${pos}`}
@@ -16,6 +17,7 @@ function Attack({ pos, info, onClick }) {
       <p>
         type:{info.type} element:{info.el} prio:{info.prio}
       </p>
+      <img className="icontype" src={imgtype} alt="something went wrong" />
     </div>
   );
 }
