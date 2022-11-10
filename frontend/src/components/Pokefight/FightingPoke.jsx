@@ -33,7 +33,7 @@ function FightingPoke({ player, baseHP, hp, name, image, types }) {
   };
   return (
     <div className={`pokemon${player}`}>
-      <h4>{name}</h4>
+      <h4>{name.charAt(0).toUpperCase() + name.slice(1)}</h4>
       <div className="types">
         <p style={setStyle(types[0])}>{types[0]}</p>
         {secondType(types[1])}
