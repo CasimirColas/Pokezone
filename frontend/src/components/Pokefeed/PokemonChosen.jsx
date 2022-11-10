@@ -14,7 +14,9 @@ function PokemonChosen({ ourpokemons }) {
 
 export default PokemonChosen;
 
-PokemonChosen.defaultProps = {};
+PokemonChosen.defaultProps = {
+  ourpokemons: "texte",
+};
 
 PokemonChosen.propTypes = {
   ourpokemons: Proptypes.string,
