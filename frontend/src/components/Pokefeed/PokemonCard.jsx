@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react";
 import "./Pokefeed.css";
+import Proptypes from "prop-types";
 import ValuesUp from "./ValuesUp";
 
-function PokemonCard() {
+function PokemonCard({ pokemonstat }) {
   return (
     <div>
       <table className="pokemon-table">
@@ -19,37 +20,31 @@ function PokemonCard() {
         </tr>
         <tr>
           <th scope="row">Points de vie</th>
-          <td>5</td>
+          <td>{pokemonstat.hp}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
         <tr>
           <th scope="row">Attaque</th>
-          <td>5</td>
+          <td>{pokemonstat.attack}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
         <tr>
           <th scope="row">Vitesse</th>
-          <td>5</td>
+          <td>{pokemonstat.speed}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
         <tr>
           <th scope="row">Attaque Spéciale</th>
-          <td>5</td>
+          <td>{pokemonstat.specialattack}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
         <tr>
           <th scope="row">Defense Spéciale</th>
-          <td>5</td>
-          <ValuesUp />
-          <td>15</td>
-        </tr>
-        <tr>
-          <th scope="row">Vitesse</th>
-          <td>5</td>
+          <td>{pokemonstat.specialdefense}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
@@ -59,3 +54,11 @@ function PokemonCard() {
 }
 
 export default PokemonCard;
+
+PokemonCard.defaultProps = {
+  pokemonstat: "texte",
+};
+
+PokemonCard.propTypes = {
+  pokemonstat: Proptypes.string,
+};

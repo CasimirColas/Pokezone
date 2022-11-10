@@ -1,17 +1,21 @@
 import React from "react";
-import "./Pokefeed.css";
+import Proptypes from "prop-types";
 
-function PokemonChosen() {
+function PokemonChosen({ ourpokemons }) {
   return (
-    <div className="pokemon-selected">
-      <img
-        src="src/images/Pichu.png"
-        alt="Test OK"
-        className="pokemon-selected-img"
-      />
-      <p className="feed-txt">Click on one berry to feed "pokemon_name"</p>
+    <div>
+      {ourpokemons &&
+        ourpokemons.map((pokemon) => {
+          return <h3 key={pokemon.name}>{pokemon.name}</h3>;
+        })}
     </div>
   );
 }
 
 export default PokemonChosen;
+
+PokemonChosen.defaultProps = {};
+
+PokemonChosen.propTypes = {
+  ourpokemons: Proptypes.string,
+};

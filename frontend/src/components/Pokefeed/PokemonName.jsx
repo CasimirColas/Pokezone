@@ -1,12 +1,24 @@
 import React from "react";
-import "./Pokefeed.css";
+import Proptypes from "prop-types";
 
-function PokemonName() {
+function PokemonName({ displayedPokemon }) {
   return (
-    <div className="pokemon-name-bloc">
-      <p className="pokemon-name-txt">Nom du pokémon</p>
+    <div>
+      <img
+        src={displayedPokemon.sprites.other.dream_world.front_default}
+        alt={displayedPokemon.name}
+      />
+      <p>{displayedPokemon.name}</p>
     </div>
   );
 }
 
 export default PokemonName;
+
+PokemonName.defaultProps = {
+  displayedPokemon: "texte",
+};
+
+PokemonName.propTypes = {
+  displayedPokemon: Proptypes.string,
+};
