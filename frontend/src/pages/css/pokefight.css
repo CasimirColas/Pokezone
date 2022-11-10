@@ -108,3 +108,9 @@
 .icontype {
     width: 15%;
 }
+@media screen and (max-width: 680px){
+    .versusbar h3{
+        font-size: 80%;
+        padding-inline: 10%;
+    }
+}
