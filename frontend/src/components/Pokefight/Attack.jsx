@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from "prop-types";
 import React from "react";
-import colors from "../../assets/pokemonColorPicker";
+import colors from "../../assets/tables/pokemonColorPicker";
 
 function Attack({ pos, info, onClick }) {
   const imgtype = `${info.el}.png`;

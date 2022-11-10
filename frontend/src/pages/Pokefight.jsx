@@ -3,7 +3,7 @@ import axios from "axios";
 import Attack from "../components/Pokefight/Attack";
 import FightingPoke from "../components/Pokefight/FightingPoke";
 import pokeVS from "../assets/pokeVS.png";
-import effect from "../components/Pokefight/effectiveness";
+import effect from "../assets/tables/effectiveness";
 import "./css/pokefight.css";
 
 function Pokefight() {

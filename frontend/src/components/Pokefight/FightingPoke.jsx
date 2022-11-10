@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import colors from "../../assets/pokemonColorPicker";
+import colors from "../../assets/tables/pokemonColorPicker";
 
 function FightingPoke({ player, baseHP, hp, name, image, types }) {
   function hpcolor(num) {
