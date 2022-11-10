@@ -4,7 +4,6 @@ import React from "react";
 import colors from "../../assets/tables/pokemonColorPicker";
 
 function Attack({ pos, info, onClick }) {
-  const imgtype = `${info.el}.png`;
   const colorMatch = {
     backgroundColor: `rgba(${colors[`${info.el}`].rgb}, 0.5)`,
     borderColor: `#${colors[`${info.el}`].hex}`,
@@ -21,7 +20,11 @@ function Attack({ pos, info, onClick }) {
         {pos} name: {info.name} acc:{info.acc} power:{info.power}
         type:{info.type}
       </p>
-      <img className="icontype" src={imgtype} alt="something went wrong" />
+      <img
+        className="icontype"
+        src={`${info.el}.png`}
+        alt="something went wrong"
+      />
     </div>
   );
 }
