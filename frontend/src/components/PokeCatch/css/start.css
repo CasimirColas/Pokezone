@@ -1,0 +1,64 @@
+.startGeneral{
+height: 60vh;
+margin-top: 60px;
+margin-bottom: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.navAppears {
+    background-color: #B0002D;
+    width: 250px;
+    height: 25px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px 10px 20px 0px #767586;
+    color: white;
+    font-size: 10px;
+}
+
+.imgPokeAppears{
+    background-image: url(../../../assets/images/fond_pokecatch.png);
+    background-repeat: no-repeat;
+    background-size: 50vh;
+    background-position: -5vh 10vh; 
+    min-width: 40vh;
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.imgPokeAppears img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.ballAppears img {
+    width: 125px;
+}
+
+.ballAppears {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ballDescription {
+    background-color: #B0002D;
+    width: 250px;
+    height: 25px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px 10px 20px 0px #767586;
+    color: white;
+    font-size: 10px;
+}

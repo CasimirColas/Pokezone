@@ -1,0 +1,39 @@
+.catchGeneral {
+    height: 60vh;
+margin-top: 60px;
+margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pourcentage {
+ 
+    display: flex;
+    justify-content: center;
+
+}
+
+.prog {
+    position: absolute;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.catch {
+    
+    background-image: url(../../../assets/images/fond_pokecatch.png);
+    background-repeat: no-repeat;
+    background-size: 50vh;
+    background-position: ;
+    width: 50vh;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catch img {
+    width: 150px;
+}

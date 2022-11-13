@@ -1,0 +1,51 @@
+.inventory {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+  
+  .place1,
+  .place2,
+  .place3,
+  .place4 {
+    background-color: #aba9bc;
+    opacity: ;
+    width: 40px;
+    height: 40px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+  }
+  
+  .generalnavinventory {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navInventory {
+    background-color: #1C4CBD;
+    width: 250px;
+    height: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px 10px 20px 0px #767586;
+
+}
+
+.textNavInventory {
+    color: white;
+    font-size: 10px;
+}
+
+.place1 img {
+  max-width: 100px;
+}
+
+.geneInv {
+  height: 10vh;
+}

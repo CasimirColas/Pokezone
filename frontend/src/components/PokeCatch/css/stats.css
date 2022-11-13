@@ -1,0 +1,99 @@
+.statsGeneral {
+    height: 60vh;
+margin-top: 60px;
+margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.capturedPokemon {
+    background-color: #B0002D;
+    width: 250px;
+    height: 25px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px 10px 20px 0px #767586;
+    color: white;
+    font-size: 10px;
+    margin-bottom: 1vh;
+}
+
+.imgStatsPokemon img {
+    width: 200px;
+}
+
+.imgStatsPokemon {
+    display: flex;
+    justify-content: center;
+}
+
+.pokeStats {
+    border: 1px solid #767586;
+    width: 50vh;
+    box-shadow: -10px 10px 20px 0px #767586;
+    border-radius: 20px 0px 20px 0px;
+    background-color: #ABA9BC ;
+}
+
+.statsPokemon {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 2px 2px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 13px;
+}
+
+.regame {
+    background-color: #1C4CBD;
+    width: 175px;
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px 10px 20px 0px #767586;
+    color: white;
+    font-size: 20px;
+}
+
+.inventoryFull {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1C4CBD;
+    width: 175px;
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -10px 10px 20px 0px #767586;
+    color: white;
+    font-size: 12px;
+}
+
+.weight, .statsweight, .hp, .statshp,
+.attack,
+.statsattack,
+.defense,
+.statsdefense,
+.speed,
+.statsspeed, 
+.spattack,
+.statsspattack,
+.spdefense,
+.statsspdefense
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
