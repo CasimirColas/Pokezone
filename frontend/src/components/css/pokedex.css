@@ -8,27 +8,38 @@
   --margin-city: 1rem;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 600px;
+  margin-top: 100px;
 }
 
 .pokeListBack {
   opacity: 50%;
-  margin: 10%;
-  height: 23.1rem;
+  height: 30.2rem;
   width: 16rem;
-  top: 8.5rem;
-  background-color: #767586;
-  box-shadow: #271cbb 1px 1px 1px 1px;
+  background-color: #cd6a83;
+  box-shadow: #ff0040 2px 1px 3px 1px;
   border-bottom-left-radius: 15% 7%;
   border-bottom-right-radius: 15% 7%;
   border-top-left-radius: 15% 7%;
   border-top-right-radius: 15% 7%;
   position: absolute;
+  top: 50%;
+  z-index: 0;
 }
 
+.pokeListBack p {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
 
 img.pokeup,
 img.pokedown {
@@ -37,7 +48,6 @@ img.pokedown {
   align-items: center;
   width: 100px;
   height: 50px;
- 
 }
 
 .top_pokeball_parent,
@@ -55,7 +65,6 @@ img.pokedown {
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 35%;
 }
 
 .pokedown {
@@ -71,15 +80,27 @@ img.pokedown {
     visibility: visible;
   }
   to {
-    bottom: calc(66% - 50px);
+    bottom: calc(100% - 50px);
   }
 }
+
 @keyframes slideInDown {
   from {
     visibility: visible;
   }
   to {
-    bottom: 25%;
+    bottom: 5%;
+  }
+}
+
+@keyframes grow {
+  from {
+    height: 0;
+    top: 50%;
+  }
+  to {
+    height: 30.2rem;
+    top: 8.5%;
   }
 }
 
@@ -94,16 +115,8 @@ img.pokedown {
   animation-duration: 1s;
   animation-fill-mode: both;
 }
-
-
-@media screen and (max-width: 320px) {
-  * {
-      box-sizing: border-box;
-    }
-
-  body{
-      width: 100%;
-  }
-  }
-
-
+.pokeListBack {
+  animation-name: grow;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}

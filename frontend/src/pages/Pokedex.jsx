@@ -2,12 +2,13 @@ import React from "react";
 import "../components/css/pokedex.css";
 import PokeDown from "../assets/images/PokeDown.png";
 import PokeUp from "../assets/images/PokeUp.png";
+import SearchBar from "../components/App components/SearchBar";
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import "animate.css";
 
 function Pokedex() {
   return (
-    <main>
+    <div className="container">
       <div className="top_pokeball_parent">
         <img
           src={PokeUp}
@@ -15,8 +16,8 @@ function Pokedex() {
           alt="pokeup"
         />
       </div>
-      <div className="pokeListBack animate__animated animate__hiddenShow" />
-
+      <div className="pokeListBack" />
+      <SearchBar />
       <div className="bottom_pokeball_parent">
         <img
           src={PokeDown}
@@ -24,7 +25,7 @@ function Pokedex() {
           alt="pokedown"
         />
       </div>
-    </main>
+    </div>
   );
 }
 

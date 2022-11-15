@@ -8,11 +8,11 @@
   --margin-city: 1rem;
 }
 
-
 .page-index {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin: 5%;
   padding-top: 15vh;
 }
 
@@ -20,33 +20,33 @@
   display: flex;
   justify-content: center;
   padding: 10%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 5px 1px 3px black;
 }
 
 section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5rem;
   margin: 1rem;
 }
 
 article {
-display: flex;
-align-items: baseline;
+  display: flex;
+  align-items: baseline;
 }
 
-article.pokecatch h2, article.pokefeed h2 {
-display: flex;
-order : 1 ;
+article.pokecatch h2,
+article.pokefeed h2 {
+  display: flex;
+  order: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+article.pokefight h2,
+article.pokedex h2 {
+  display: flex;
+  order: 5;
+}
