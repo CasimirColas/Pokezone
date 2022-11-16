@@ -143,10 +143,10 @@
 }
 .defeatScreen button:hover {
   box-shadow: -7px 8px 9px -2px #767586;
-  color: #FFCC00;
+  color: #ffcc00;
 }
 .victoryScreen button {
-  background-color: #1C4CBD;
+  background-color: #1c4cbd;
   width: 30%;
   height: 5rem;
   border-top-left-radius: 10px;
@@ -156,7 +156,7 @@
 }
 .victoryScreen button:hover {
   box-shadow: -7px 8px 9px -2px #767586;
-  color: #FFCC00;
+  color: #ffcc00;
 }
 .msgBarV {
   padding-block: 2%;
@@ -165,13 +165,13 @@
   background: rgba(28, 76, 189, 0.3);
   border-width: 1px 0px;
   border-style: solid;
-  border-color: #1C4CBD;
+  border-color: #1c4cbd;
   display: flex;
   justify-content: center;
 }
 .msgBarV h3 {
   font-size: 100%;
-  color: #1C4CBD;
+  color: #1c4cbd;
 }
 .msgBarD {
   padding-block: 2%;
@@ -195,7 +195,7 @@
   background: rgba(255, 204, 0, 0.3);
   border-width: 3px 0px;
   border-style: solid;
-  border-color: #FFCC00;
+  border-color: #ffcc00;
   display: flex;
   justify-content: center;
 }
