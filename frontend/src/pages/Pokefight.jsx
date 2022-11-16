@@ -4,12 +4,57 @@ import Attack from "../components/Pokefight/Attack";
 import FightingPoke from "../components/Pokefight/FightingPoke";
 import pokeVS from "../assets/pokeVS.png";
 import effect from "../assets/tables/effectiveness";
+import loadingImg from "../assets/loading.png";
 import "./css/pokefight.css";
 
 function Pokefight() {
+  const loadingpoke = {
+    name: "loading",
+    image: loadingImg,
+    baseHP: 0,
+    hp: 0,
+    a: 0,
+    as: 0,
+    d: 0,
+    ds: 0,
+    speed: 0,
+    types: ["normal"],
+    attack1: {
+      name: "loading",
+      prio: 0,
+      acc: 0,
+      power: 0,
+      type: "",
+      el: "normal",
+    },
+    attack2: {
+      name: "loading",
+      prio: 0,
+      acc: 0,
+      power: 0,
+      type: "",
+      el: "normal",
+    },
+    attack3: {
+      name: "loading",
+      prio: 0,
+      acc: 0,
+      power: 0,
+      type: "",
+      el: "normal",
+    },
+    attack4: {
+      name: "loading",
+      prio: 0,
+      acc: 0,
+      power: 0,
+      type: "",
+      el: "normal",
+    },
+  };
   const [names, setNames] = useState();
-  const [myPoke, setMyPoke] = useState();
-  const [enmyPoke, setEnmyPoke] = useState();
+  const [myPoke, setMyPoke] = useState(loadingpoke);
+  const [enmyPoke, setEnmyPoke] = useState(loadingpoke);
   const [gameState, setGameState] = useState(0);
   function randomTab(tab) {
     if (!tab) {
@@ -73,7 +118,6 @@ function Pokefight() {
       ds: data.stats[4].base_stat * +5,
       speed: data.stats[5].base_stat * +5,
       types: data.types.map((e) => e.type.name),
-      color: "",
       attack1: await getAttack(randomTab(aList)),
       attack2: await getAttack(randomTab(aList)),
       attack3: await getAttack(randomTab(aList)),
@@ -92,6 +136,8 @@ function Pokefight() {
   }
   async function randomSet() {
     setGameState(0);
+    setMyPoke(loadingpoke);
+    setEnmyPoke(loadingpoke);
     setMyPoke(await initiatePoke(randomTab(names)));
     setEnmyPoke(await initiatePoke(randomTab(names)));
   }
