@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Attack from "../components/Pokefight/Attack";
 import FightingPoke from "../components/Pokefight/FightingPoke";
+import VictoryScreen from "../components/Pokefight/VictoryScreen";
+import DefeatScreen from "../components/Pokefight/DefeatScreen";
 import pokeVS from "../assets/pokeVS.png";
 import effect from "../assets/tables/effectiveness";
 import loadingImg from "../assets/loading.png";
@@ -175,21 +177,6 @@ function Pokefight() {
     }
     return Math.round(dmgDone);
   }
-  function gameMSG(e) {
-    switch (e) {
-      case 0:
-        return "on going";
-
-      case 1:
-        return "victory";
-
-      case 2:
-        return "defeat";
-
-      default:
-        return "something is wrong";
-    }
-  }
   function dealDMG(atk) {
     if (myPoke.hp === 0 || enmyPoke.hp === 0) {
       return;
@@ -262,15 +249,91 @@ function Pokefight() {
 
     fetchData().catch(console.error);
   }, []);
+  function gameStateDisplay(e) {
+    switch (e) {
+      case 0:
+        return (
+          <div className="ongoing">
+            <div className="terrain">
+              <FightingPoke
+                player={1}
+                baseHP={enmyPoke.baseHP}
+                hp={enmyPoke.hp}
+                name={enmyPoke.name}
+                image={enmyPoke.image}
+                types={enmyPoke.types}
+              />
+              <FightingPoke
+                player={0}
+                baseHP={myPoke.baseHP}
+                hp={myPoke.hp}
+                name={myPoke.name}
+                image={myPoke.image}
+                types={myPoke.types}
+              />
+            </div>
+            <div className="abilities">
+              <Attack
+                pos={1}
+                info={myPoke.attack1}
+                onClick={() => {
+                  dealDMG(myPoke.attack1);
+                }}
+              />
+              <Attack
+                pos={2}
+                info={myPoke.attack2}
+                onClick={() => {
+                  dealDMG(myPoke.attack2);
+                }}
+              />
+              <Attack
+                pos={3}
+                info={myPoke.attack3}
+                onClick={() => dealDMG(myPoke.attack3)}
+              />
+              <Attack
+                pos={4}
+                info={myPoke.attack4}
+                onClick={() => {
+                  dealDMG(myPoke.attack4);
+                }}
+              />
+            </div>
+          </div>
+        );
+
+      case 1:
+        return (
+          <VictoryScreen
+            img={myPoke.image}
+            name={myPoke.name}
+            onClick={() => {
+              randomSet();
+            }}
+          />
+        );
+
+      case 2:
+        return (
+          <DefeatScreen
+            img={enmyPoke.image}
+            name={enmyPoke.name}
+            onClick={() => {
+              randomSet();
+            }}
+          />
+        );
+
+      default:
+        return "something is wrong";
+    }
+  }
   if (!myPoke || !enmyPoke) {
     return <>loading...</>;
   }
   return (
     <div className="Pokefight">
-      <button type="submit" onClick={randomSet}>
-        New set
-      </button>
-      <h3>{gameMSG(gameState)}</h3>
       <div className="versusbar">
         <h3>{myPoke.name.charAt(0).toUpperCase() + myPoke.name.slice(1)}</h3>
         <img className="vsimg" src={pokeVS} alt="not found" />
@@ -278,52 +341,7 @@ function Pokefight() {
           {enmyPoke.name.charAt(0).toUpperCase() + enmyPoke.name.slice(1)}
         </h3>
       </div>
-      <div className="terrain">
-        <FightingPoke
-          player={1}
-          baseHP={enmyPoke.baseHP}
-          hp={enmyPoke.hp}
-          name={enmyPoke.name}
-          image={enmyPoke.image}
-          types={enmyPoke.types}
-        />
-        <FightingPoke
-          player={0}
-          baseHP={myPoke.baseHP}
-          hp={myPoke.hp}
-          name={myPoke.name}
-          image={myPoke.image}
-          types={myPoke.types}
-        />
-      </div>
-      <div className="abilities">
-        <Attack
-          pos={1}
-          info={myPoke.attack1}
-          onClick={() => {
-            dealDMG(myPoke.attack1);
-          }}
-        />
-        <Attack
-          pos={2}
-          info={myPoke.attack2}
-          onClick={() => {
-            dealDMG(myPoke.attack2);
-          }}
-        />
-        <Attack
-          pos={3}
-          info={myPoke.attack3}
-          onClick={() => dealDMG(myPoke.attack3)}
-        />
-        <Attack
-          pos={4}
-          info={myPoke.attack4}
-          onClick={() => {
-            dealDMG(myPoke.attack4);
-          }}
-        />
-      </div>
+      {gameStateDisplay(gameState)}
     </div>
   );
 }

@@ -1,8 +1,9 @@
 .Pokefight {
-  margin-top: 10vh;
+  margin-top: 8%;
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 5%;
 }
 .versusbar {
   display: flex;
@@ -16,7 +17,6 @@
 }
 .versusbar h3 {
   font-size: 200%;
-  padding-inline: 10%;
 }
 .terrain {
   margin-block: 2rem;
@@ -106,14 +106,118 @@
   background-size: 120%;
 }
 .vsimg {
-  width: 15%;
+  width: 10rem;
 }
 .icontype {
   width: 15%;
 }
+.victoryScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.defeatScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.defeatScreen button {
+  background-color: #b0002d;
+  width: 30%;
+  height: 5rem;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: white;
+  font-size: 100%;
+}
+.defBar {
+  margin-top: 2%;
+  padding-block: 2%;
+  width: 100%;
+  background: rgba(176, 0, 45, 0.3);
+  border-width: 3px 0px;
+  border-style: solid;
+  border-color: #b0002d;
+  display: flex;
+  justify-content: center;
+}
+.defeatScreen button:hover {
+  box-shadow: -7px 8px 9px -2px #767586;
+  color: #FFCC00;
+}
+.victoryScreen button {
+  background-color: #1C4CBD;
+  width: 30%;
+  height: 5rem;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: white;
+  font-size: 100%;
+}
+.victoryScreen button:hover {
+  box-shadow: -7px 8px 9px -2px #767586;
+  color: #FFCC00;
+}
+.msgBarV {
+  padding-block: 2%;
+  margin-top: 5%;
+  width: 100%;
+  background: rgba(28, 76, 189, 0.3);
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #1C4CBD;
+  display: flex;
+  justify-content: center;
+}
+.msgBarV h3 {
+  font-size: 100%;
+  color: #1C4CBD;
+}
+.msgBarD {
+  padding-block: 2%;
+  margin-top: 5%;
+  width: 100%;
+  background: rgba(176, 0, 45, 0.3);
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #b0002d;
+  display: flex;
+  justify-content: center;
+}
+.msgBarD h3 {
+  font-size: 100%;
+  color: #b0002d;
+}
+.vicBar {
+  margin-top: 5%;
+  padding-block: 2%;
+  width: 100%;
+  background: rgba(255, 204, 0, 0.3);
+  border-width: 3px 0px;
+  border-style: solid;
+  border-color: #FFCC00;
+  display: flex;
+  justify-content: center;
+}
+.victoryImg {
+  width: 30%;
+}
+.winPoke {
+  width: 30%;
+  background-image: url(../../assets/images/field.png);
+  background-repeat: no-repeat;
+  background-position: 30% 160%;
+  background-size: 120%;
+  margin-bottom: 5%;
+}
 @media screen and (max-width: 680px) {
+  .versusbar {
+    margin-top: 10%;
+  }
   .versusbar h3 {
     font-size: 80%;
-    padding-inline: 10%;
+  }
+  .vsimg {
+    width: 5rem;
   }
 }
