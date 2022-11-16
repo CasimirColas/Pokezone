@@ -206,14 +206,6 @@ function Pokefight() {
       }
     }
   }
-  // function validate(pok) {
-  //   for (const [, value] of Object.entries(pok)) {
-  //     if (!value) {
-  //       return false;
-  //     }
-  //   }
-  //   return true;
-  // }
   useEffect(() => {
     const fetchData = async () => {
       const genList = await getListOfNames();
