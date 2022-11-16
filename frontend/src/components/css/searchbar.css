@@ -9,27 +9,52 @@
 }
 
 .searchbar {
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  gap: 0.5rem;
+}
+
+.pokeimg {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 12%;
+  width: 4rem;
+  height: 4rem;
 }
 
-
-@keyframes SearchGrow {
-  from {
-    height: 0;
-    top: 50%;
-  }
-  to {
-    height: 2rem;
-    top: 45%;
-  }
+.pokeBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 15rem;
+  height: 2rem;
+  background-color: #ebebf1;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 15px;
 }
 
-form input {
+.pokecards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+input {
   position: relative;
   display: flex;
   justify-content: center;
@@ -41,10 +66,38 @@ form input {
   border-radius: 15px;
 }
 
+@keyframes SearchGrow {
+  from {
+    height: 0;
+    top: 50%;
+  }
+  to {
+    height: 2rem;
+    top: 1%;
+  }
+}
+
+@keyframes PokeListGrow {
+  from {
+    height: 0;
+    top: 40%;
+  }
+  to {
+    height: 22rem;
+    bottom: 20%;
+  }
+}
+
 
 /* The element to apply the animation to */
-.searchbar {
+input, h4 {
   animation-name: SearchGrow;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.searchbar, .pokeBar, .pokecards {
+  animation-name: PokeListGrow;
+  animation-duration: 1s;
   animation-fill-mode: both;
 }

@@ -1,48 +1,88 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ListPokemons from "./ListPokemons";
-import DisplayPokemons from "./DisplayPokemon";
 import "../css/searchbar.css";
+import Pokeitem from "./Pokeitem";
+import PokemonStats from "./PokemonStats";
 
 function SearchBar() {
   const [search, setSearch] = useState("");
   const [pokemons, setPokemons] = useState([]);
-  const [currentPokemon, setCurrentPokemon] = useState();
-
+  const [displayedPoke, setDisplayedPoke] = useState();
+  const [filteredPokemons, setFilteredPokemons] = useState([]);
+  const [isDetailed, setIsDetailed] = useState(false);
+  function changeStatus(name) {
+    setDisplayedPoke(name);
+    setIsDetailed(!isDetailed);
+  }
   useEffect(() => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${search}`)
-      .then((response) => {
-        if (search) {
-          setPokemons([]);
-          setCurrentPokemon(response.data);
-        } else {
-          setPokemons(response.data);
-        }
+      .get(`https://pokeapi.co/api/v2/pokemon/?limit=151`)
+      .then((response) => response.data.results)
+      .then((data) => {
+        const filtered = data.map((e) => e.name);
+        setPokemons(filtered);
+        setFilteredPokemons(filtered);
       });
-  }, [search]);
+  }, []);
 
+  useEffect(() => {
+    const filtered = pokemons.filter((e) => e.includes(search));
+    setFilteredPokemons(filtered);
+  }, [search]);
+  if (!pokemons) {
+    return <div>Loading...</div>;
+  }
+  function display(e) {
+    if (e) {
+      return (
+        <PokemonStats
+          nom={displayedPoke}
+          onClick={() => {
+            changeStatus(null);
+          }}
+        />
+      );
+    }
+    return (
+      <div className="pokecards">
+        {filteredPokemons ? (
+          <Pokeitem
+            nom={filteredPokemons[0]}
+            onClick={() => changeStatus(filteredPokemons[0])}
+          />
+        ) : null}
+        {filteredPokemons ? (
+          <Pokeitem
+            nom={filteredPokemons[1]}
+            onClick={() => changeStatus(filteredPokemons[1])}
+          />
+        ) : null}
+        {filteredPokemons ? (
+          <Pokeitem
+            nom={filteredPokemons[2]}
+            onClick={() => changeStatus(filteredPokemons[2])}
+          />
+        ) : null}
+        {filteredPokemons ? (
+          <Pokeitem
+            nom={filteredPokemons[3]}
+            onClick={() => changeStatus(filteredPokemons[3])}
+          />
+        ) : null}
+      </div>
+    );
+  }
   return (
     <div className="searchbar">
-      <form>
-        <p>
-          <label htmlFor="search">
-            {" "}
-            Search Your Pokemon!
-            <input
-              id="search"
-              type="search"
-              name="search"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </label>
-        </p>
-        {pokemons && <ListPokemons ourPokemons={pokemons.results} />}
-        {currentPokemon && (
-          <DisplayPokemons displayedPokemons={currentPokemon} />
-        )}
-      </form>
+      <h4>Search Your Pokemon!</h4>
+      <input
+        id="search"
+        type="search"
+        name="search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      {display(isDetailed)}
     </div>
   );
 }

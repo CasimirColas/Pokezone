@@ -89,7 +89,7 @@ img.pokedown {
     visibility: visible;
   }
   to {
-    bottom: 5%;
+    bottom: 2%;
   }
 }
 
@@ -99,7 +99,7 @@ img.pokedown {
     top: 50%;
   }
   to {
-    height: 30.2rem;
+    height: 30.8rem;
     top: 8.5%;
   }
 }
