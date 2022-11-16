@@ -1,123 +1,125 @@
 .statsGeneral {
-    height: 60vh;
-    margin-top: 60px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2vh;
+  height: 60vh;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
 }
 
 .capturedPokemon {
-    background-color: #B0002D;
-    width: 250px;
-    height: 25px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: -10px 10px 20px 0px #767586;
-    color: white;
-    font-size: 10px;
-    margin-bottom: 1vh;
+  background-color: #b0002d;
+  width: 250px;
+  height: 25px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -10px 10px 20px 0px #767586;
+  color: white;
+  font-size: 10px;
+  margin-bottom: 1vh;
 }
 
 .imgStatsPokemon img {
-    width: 150px;
+  width: 150px;
 }
 
 .imgStatsPokemon {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .pokeStats {
-    border: 1px solid #767586;
-    width: 50vh;
-    height: 45vh;
-    box-shadow: -10px 10px 20px 0px #767586;
-    border-radius: 20px 0px 20px 0px;
-    background-color: #ABA9BC ;
+  border: 1px solid #767586;
+  width: 50vh;
+  height: 45vh;
+  box-shadow: -10px 10px 20px 0px #767586;
+  border-radius: 20px 0px 20px 0px;
+  background-color: #aba9bc;
 }
 
 .statsPokemon {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-    gap: 2px 2px; 
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    font-size: 13px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
 }
 
 .regame {
-    background-color: #1C4CBD;
-    width: 175px;
-    height: 60px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: -10px 10px 20px 0px #767586;
-    color: white;
-    font-size: 20px;
+  background-color: #1c4cbd;
+  width: 175px;
+  height: 60px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -10px 10px 20px 0px #767586;
+  color: white;
+  font-size: 20px;
 }
 
 .inventoryFull {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #1C4CBD;
-    width: 175px;
-    height: 60px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: -10px 10px 20px 0px #767586;
-    color: white;
-    font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1c4cbd;
+  width: 175px;
+  height: 60px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -10px 10px 20px 0px #767586;
+  color: white;
+  font-size: 12px;
 }
 
-.weight, .statsweight, .hp, .statshp,
+.weight,
+.statsweight,
+.hp,
+.statshp,
 .attack,
 .statsattack,
 .defense,
 .statsdefense,
 .speed,
-.statsspeed, 
+.statsspeed,
 .spattack,
 .statsspattack,
 .spdefense,
-.statsspdefense
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-shadow: 0 0 5px black;
+.statsspdefense {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 0 0 5px black;
 }
 
 .videbar {
-    padding: 0;
-    margin: 0;
-    height: 1.1em;
-    width: 150px;
-    border-radius: 6px;
-    background-color: white;
+  padding: 0;
+  margin: 0;
+  height: 1.1em;
+  width: 150px;
+  border-radius: 6px;
+  background-color: white;
 }
 
-.bar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 10px;
-    border: 1px solid #ABA9BC;
-    text-shadow: 0 0 5px black;
+.bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 10px;
+  border: 1px solid #aba9bc;
+  text-shadow: 0 0 5px black;
 }
