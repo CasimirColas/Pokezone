@@ -1,0 +1,54 @@
+.catchGeneral {
+  height: 60vh;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+
+.pourcentage {
+  display: flex;
+  justify-content: center;
+}
+
+.prog {
+  position: absolute;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.catch {
+  background-image: url(../../../assets/images/fond_pokecatch.png);
+  background-repeat: no-repeat;
+  background-size: 50vh;
+  width: 50vh;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catch img {
+  width: 150px;
+}
+
+.TipsCatch {
+  position: absolute;
+  border: 1px solid #767586;
+  width: 150px;
+  height: 100px;
+  right: 0vh;
+  bottom: 10vh;
+  box-shadow: -10px 10px 20px 0px #767586;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  text-align: center;
+}
