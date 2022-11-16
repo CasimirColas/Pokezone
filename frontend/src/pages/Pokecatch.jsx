@@ -9,7 +9,7 @@ import "./pokecatch.css";
 function Pokecatch() {
   const [progress, setProgress] = useState(0);
   const [data, setData] = useState();
-  const [number, setNumber] = useState({});
+  const [number, setNumber] = useState();
   const [randomBall, setRandomBall] = useState(0);
   const [clic, setClic] = useState();
   const [first, setFirst] = useState(0);
@@ -47,17 +47,6 @@ function Pokecatch() {
     const max = 151;
 
     setNumber(Math.floor(Math.random() * (max - min)) + min);
-  }, []);
-
-  /* Appel de l'API */
-
-  useEffect(() => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${number}`)
-      .then((response) => response.data)
-      .then((response) => {
-        setData(response);
-      });
 
     /* Balls aleatoire */
 
@@ -66,8 +55,21 @@ function Pokecatch() {
     /* Clic on balls */
 
     const low = 1;
-    const top = 10;
+    const top = 15;
     setClic(Math.floor(Math.random() * (top - low)) + low);
+  }, []);
+
+  /* Appel de l'API */
+
+  useEffect(() => {
+    if (number) {
+      axios
+        .get(`https://pokeapi.co/api/v2/pokemon/${number}`)
+        .then((response) => response.data)
+        .then((response) => {
+          setData(response);
+        });
+    }
   }, [number]);
 
   if (!data) {
@@ -87,11 +89,17 @@ function Pokecatch() {
             setNumber={number}
             src={data.sprites.other["official-artwork"].front_default}
             ball={randomBall}
+            first={first}
           />
         );
       case 1:
         return (
-          <Catch setProgress={setProgress} ball={randomBall} clic={clic} />
+          <Catch
+            setProgress={setProgress}
+            ball={randomBall}
+            clic={clic}
+            first={first}
+          />
         );
       case 2:
         return (

@@ -26,7 +26,6 @@ function Stats({
   setFourth,
 }) {
   const [end, setEnd] = useState(false);
-
   useEffect(() => {
     if (first !== 0 && second !== 0 && third !== 0 && fourth === 0) {
       setFourth(src);
@@ -52,7 +51,6 @@ function Stats({
     setNumber(Math.floor(Math.random() * (max - min)) + min);
     setProgress(0);
   }
-
   return (
     <div className="statsGeneral">
       <div className="capturedPokemon">{name} was captured !</div>
@@ -62,23 +60,104 @@ function Stats({
         </div>
         <div className="statsPokemon">
           <div className="weight">Weight: </div>
-          <div className="tourweight">
-            <div className="statsweight">{weight}</div>
+
+          <div className="videbar">
+            <div
+              className="bar"
+              style={{
+                height: "100%",
+                width: `${(weight * 150) / 1500}px`,
+                backgroundColor: "#008000",
+                borderRadius: "5px",
+              }}
+            >
+              {weight}
+            </div>
           </div>
           <div className="hp">Hp:</div>
-          <div className="tourhp">
-            <div className="statshp">{hp}</div>
+          <div className="videbar">
+            <div
+              className="bar"
+              style={{
+                height: "100%",
+                width: `${(hp * 150) / 255}px`,
+                backgroundColor: "#008000",
+                borderRadius: "5px",
+              }}
+            >
+              {hp}
+            </div>
           </div>
           <div className="attack">Attack:</div>
-          <div className="statsattack">{attack}</div>
+          <div className="videbar">
+            <div
+              className="bar"
+              style={{
+                height: "100%",
+                width: `${(attack * 150) / 255}px`,
+                backgroundColor: "#E94D4D",
+                borderRadius: "5px",
+              }}
+            >
+              {attack}
+            </div>
+          </div>
           <div className="defense">Defense:</div>
-          <div className="statsdefense">{defense}</div>
+          <div className="videbar">
+            <div
+              className="bar"
+              style={{
+                height: "100%",
+                width: `${(defense * 150) / 255}px`,
+                backgroundColor: "#EBC35B",
+                borderRadius: "5px",
+              }}
+            >
+              {defense}
+            </div>
+          </div>
           <div className="speed">Speed:</div>
-          <div className="statsspeed">{speed}</div>
+          <div className="videbar">
+            <div
+              className="bar"
+              style={{
+                height: "100%",
+                width: `${(speed * 150) / 255}px`,
+                backgroundColor: "#82FFE1",
+                borderRadius: "5px",
+              }}
+            >
+              {speed}
+            </div>
+          </div>
           <div className="spattack">Sp. Attack:</div>
-          <div className="statsspattack">{spattack}</div>
+          <div className="videbar">
+            <div
+              className="bar"
+              style={{
+                height: "100%",
+                width: `${(spattack * 150) / 255}px`,
+                backgroundColor: "#6664C2",
+                borderRadius: "5px",
+              }}
+            >
+              {spattack}
+            </div>
+          </div>
           <div className="spdefense">Sp. Defense:</div>
-          <div className="statsspdefense">{spdefense}</div>
+          <div className="videbar">
+            <div
+              className="bar"
+              style={{
+                height: "100%",
+                width: `${(spdefense * 150) / 255}px`,
+                backgroundColor: "#B443B7",
+                borderRadius: "5px",
+              }}
+            >
+              {spdefense}
+            </div>
+          </div>
         </div>
       </div>
       {end ? (
@@ -98,8 +177,8 @@ function Stats({
 export default Stats;
 
 Stats.defaultProps = {
-  name: 1,
-  src: 1,
+  name: "error",
+  src: "error",
   attack: 1,
   hp: 1,
   defense: 1,
@@ -108,20 +187,20 @@ Stats.defaultProps = {
   speed: 1,
   weight: 1,
   setProgress: 1,
-  first: 1,
+  first: "error",
   setFirst: 1,
   setNumber: 1,
-  second: 1,
+  second: "error",
   setSecond: 1,
-  third: 1,
+  third: "error",
   setThird: 1,
-  fourth: 1,
+  fourth: "error",
   setFourth: 1,
 };
 
 Stats.propTypes = {
-  name: PropTypes.number,
-  src: PropTypes.number,
+  name: PropTypes.string,
+  src: PropTypes.string,
   attack: PropTypes.number,
   hp: PropTypes.number,
   defense: PropTypes.number,
@@ -129,14 +208,14 @@ Stats.propTypes = {
   spdefense: PropTypes.number,
   speed: PropTypes.number,
   weight: PropTypes.number,
-  setProgress: PropTypes.number,
-  first: PropTypes.number,
-  setFirst: PropTypes.number,
-  setNumber: PropTypes.number,
-  second: PropTypes.number,
-  setSecond: PropTypes.number,
-  third: PropTypes.number,
-  setThird: PropTypes.number,
-  fourth: PropTypes.number,
-  setFourth: PropTypes.number,
+  setProgress: PropTypes.func,
+  first: PropTypes.node,
+  setFirst: PropTypes.func,
+  setNumber: PropTypes.func,
+  second: PropTypes.node,
+  setSecond: PropTypes.func,
+  third: PropTypes.node,
+  setThird: PropTypes.func,
+  fourth: PropTypes.node,
+  setFourth: PropTypes.func,
 };

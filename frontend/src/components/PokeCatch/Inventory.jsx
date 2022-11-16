@@ -31,15 +31,15 @@ function Inventory({ first, second, third, fourth }) {
 export default Inventory;
 
 Inventory.defaultProps = {
-  first: 1,
-  second: 1,
-  third: 1,
-  fourth: 1,
+  first: "error",
+  second: "error",
+  third: "error",
+  fourth: "error",
 };
 
 Inventory.propTypes = {
-  first: PropTypes.number,
-  second: PropTypes.number,
-  third: PropTypes.number,
-  fourth: PropTypes.number,
+  first: PropTypes.node,
+  second: PropTypes.node,
+  third: PropTypes.node,
+  fourth: PropTypes.node,
 };
