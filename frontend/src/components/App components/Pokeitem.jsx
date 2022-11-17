@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
+import colors from "../../assets/tables/pokemonColorPicker";
 
 function Pokeitem({ nom, onClick }) {
   const [pokemon, setPokemon] = useState();
@@ -14,8 +15,9 @@ function Pokeitem({ nom, onClick }) {
         });
     }
   }, [nom]);
-  if (!pokemon) {
-    return <div>Loading...</div>;
+  if (!pokemon || !nom) {
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    return <></>;
   }
 
   const capitalizeFirst = (str) => {
@@ -24,7 +26,16 @@ function Pokeitem({ nom, onClick }) {
 
   return (
     /* eslint-disable jsx-a11y/click-events-have-key-events */
-    <div role="button" tabIndex={0} className="pokeBar" onClick={onClick}>
+    <div
+      role="button"
+      tabIndex={0}
+      className="pokeBar"
+      onClick={onClick}
+      style={{
+        backgroundColor: `rgba(${colors[pokemon.types[0].type.name].rgb}, 0.5)`,
+        borderColor: `#${colors[pokemon.types[0].type.name].hex}`,
+      }}
+    >
       <img
         className="pokeimg"
         src={pokemon.sprites.other.dream_world.front_default}

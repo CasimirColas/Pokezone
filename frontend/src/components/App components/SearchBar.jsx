@@ -32,6 +32,7 @@ function SearchBar() {
   if (!pokemons) {
     return <div>Loading...</div>;
   }
+
   function display(e) {
     if (e) {
       return (
@@ -45,6 +46,14 @@ function SearchBar() {
     }
     return (
       <div className="pokecards">
+        <h4>Search Your Pokemon!</h4>
+        <input
+          id="search"
+          type="search"
+          name="search"
+          value={search}
+          onChange={(f) => setSearch(f.target.value)}
+        />
         {filteredPokemons ? (
           <Pokeitem
             nom={filteredPokemons[0]}
@@ -72,19 +81,7 @@ function SearchBar() {
       </div>
     );
   }
-  return (
-    <div className="searchbar">
-      <h4>Search Your Pokemon!</h4>
-      <input
-        id="search"
-        type="search"
-        name="search"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      {display(isDetailed)}
-    </div>
-  );
+  return <div className="pokedexlist">{display(isDetailed)}</div>;
 }
 
 export default SearchBar;

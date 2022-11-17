@@ -8,15 +8,85 @@
   --margin-city: 1rem;
 }
 
-button {
+.pokeStats {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30.2rem;
+  width: 16rem;
+  border-bottom-left-radius: 15% 7%;
+  border-bottom-right-radius: 15% 7%;
+  border-top-left-radius: 15% 7%;
+  border-top-right-radius: 15% 7%;
+  gap: 0.5rem;
+}
+
+button {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6rem;
-  height: 4rem;
-  background-color: #ebebf1;
+  height: 2rem;
+  width: 2rem;
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
-  border-radius: 15px;
+  border-radius: 10px;
+  margin-right: 12rem;
+  margin-bottom: 12rem;
+}
+
+.displaypokeimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 7rem;
+}
+
+.poketypes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.poketypes p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  width: 7ch;
+  height: 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}
+
+.pokeabilities p {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  width: 25ch;
+  height: 1.5rem;
+}
+
+
+
+.pokemonstats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5rem;
 }
