@@ -77,9 +77,10 @@ input {
   }
 }
 
-
 /* The element to apply the animation to */
-.searchbar, .pokeBar, .pokecards {
+.searchbar,
+.pokeBar,
+.pokecards {
   animation-name: PokeListGrow;
   animation-duration: 1.5s;
   animation-delay: 0.1s;
