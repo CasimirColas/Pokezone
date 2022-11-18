@@ -66,7 +66,7 @@ function Stats({
               className="bar"
               style={{
                 height: "100%",
-                width: `${(weight * 150) / 1500}px`,
+                width: `${150}px`,
                 backgroundColor: "#008000",
                 borderRadius: "5px",
               }}

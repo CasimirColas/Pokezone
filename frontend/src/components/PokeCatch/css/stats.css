@@ -40,6 +40,9 @@
   box-shadow: -10px 10px 20px 0px #767586;
   border-radius: 20px 0px 20px 0px;
   background-color: #aba9bc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .statsPokemon {
