@@ -1,13 +1,14 @@
-import React from "react";
-import "./Pokefeed.css";
+import "../App components/css/Pokefeed.css";
 
 function PokemonEvolution() {
+  /* const [newPokemon, setNewPokemon] = useState("");  */
+
   return (
-    <div className="pokemon-evolution-bloc">
+    <div className="pokemon-evolved">
       <img
-        src="src/images/Raichu.png"
-        alt="Prochaine évoltion du Pokemon"
-        className="pokemon-evolution-img"
+        src="src/images/Pikachu.png"
+        alt="Pokemon évolué"
+        className="pokemon-evolved-img"
       />
     </div>
   );

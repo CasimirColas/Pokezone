@@ -1,10 +1,10 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react";
-import "./Pokefeed.css";
-import Proptypes from "prop-types";
+import PropTypes from "prop-types";
 import ValuesUp from "./ValuesUp";
 
-function PokemonCard({ pokemonstat }) {
+function Test3({ hp, attack, defense, specialattack, specialdefense, speed }) {
   return (
     <div>
       <table className="pokemon-table">
@@ -20,31 +20,37 @@ function PokemonCard({ pokemonstat }) {
         </tr>
         <tr>
           <th scope="row">Points de vie</th>
-          <td>{pokemonstat.hp}</td>
+          <td>{hp}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
         <tr>
           <th scope="row">Attaque</th>
-          <td>{pokemonstat.attack}</td>
+          <td>{attack}</td>
+          <ValuesUp />
+          <td>15</td>
+        </tr>
+        <tr>
+          <th scope="row">Défense</th>
+          <td>{defense}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
         <tr>
           <th scope="row">Vitesse</th>
-          <td>{pokemonstat.speed}</td>
+          <td>{speed}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
         <tr>
           <th scope="row">Attaque Spéciale</th>
-          <td>{pokemonstat.specialattack}</td>
+          <td>{specialattack}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
         <tr>
           <th scope="row">Defense Spéciale</th>
-          <td>{pokemonstat.specialdefense}</td>
+          <td>{specialdefense}</td>
           <ValuesUp />
           <td>15</td>
         </tr>
@@ -53,12 +59,13 @@ function PokemonCard({ pokemonstat }) {
   );
 }
 
-export default PokemonCard;
+export default Test3;
 
-PokemonCard.defaultProps = {
-  pokemonstat: "texte",
-};
-
-PokemonCard.propTypes = {
-  pokemonstat: Proptypes.string,
+Test3.propTypes = {
+  hp: PropTypes.number,
+  attack: PropTypes.number,
+  defense: PropTypes.number,
+  specialattack: PropTypes.number,
+  specialdefense: PropTypes.number,
+  speed: PropTypes.number,
 };

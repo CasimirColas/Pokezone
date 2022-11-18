@@ -1,5 +1,5 @@
 import React from "react";
-import "./Pokefeed.css";
+import "../App components/css/Pokefeed.css";
 
 function ValuesUp() {
   return (

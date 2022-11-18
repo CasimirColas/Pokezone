@@ -1,9 +1,9 @@
 import React from "react";
-import "./Pokefeed.css";
+import "../App components/css/Pokefeed.css";
 
 function LevelUp() {
   return (
-    <div className="levelup-img">
+    <div>
       <img src="src/images/LevelUp.jpg" alt="Level Up !" />
     </div>
   );
