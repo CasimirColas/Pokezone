@@ -8,22 +8,11 @@ import Test3 from "../components/Pokefeed/Test3";
 function Pokefeed() {
   const [display, setDisplay] = useState(0);
   const [pokemon, setPokemon] = useState("");
-  const [newPokemon, setNewPokemon] = useState("");
-
-  /* function hasEvol(number) {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon-species/${number}`)
-      .then ((response) => response.data)
-      .then ((data) => {
-        pokemon: evolves_from_species,
-      })
-  } */
 
   useEffect(() => {
     axios
       .get(
-        `https://pokeapi.co/api/v2/pokemon/${
-          Math.floor(Math.random() * 151) + 1
+        `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 151) + 1
         }`
       )
       .then((response) => response.data)
