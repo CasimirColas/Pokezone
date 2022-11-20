@@ -19,6 +19,7 @@ align-items: center;
 }
 
 .pokemon-infos-txt{
+  text-align: center;
   margin-left: 7vw;
   margin-right: 7vw;
 }
@@ -52,7 +53,6 @@ align-items: center;
 
 /* Barre de progression */
 .progress-bar {
-  width: inherit;
   height: 3vh;
   margin-top: 15px;
   margin-left: 10px;
@@ -75,16 +75,17 @@ align-items: center;
 }
 
 .levelup-img {
-  width: 25vw;
-  height: 18vh;
+  width: 20vw;
+  height: 13vh;
 }
 
 .statsbutton {
+  display: block;
   width: 200px;
   height: 25px;
   margin-top: 2vh;
-  margin-left: 7vw;
-  margin-right: 7vw;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #B0002D;
   color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -93,6 +94,9 @@ align-items: center;
 
 /*Tableau stats*/
 .stats-grid{
+  display: block;
+  margin-left: 10vw;
+  margin-right: 10vw;
   background-color: #aba9bc;
   border: solid 5px #1c4cbd ;
   border-radius: 20px 0px;

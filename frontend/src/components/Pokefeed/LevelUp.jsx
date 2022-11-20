@@ -5,7 +5,7 @@ function LevelUp() {
   return (
     <div className="levelup-box">
       <img
-        src="src/images/LevelUp.jpg"
+        src="src/images/LevelUp.png"
         alt="Level Up !"
         className="levelup-img"
       />
