@@ -25,7 +25,7 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
             <div
               className="pageChange"
               role="button"
-              tabIndex={0}
+              tabIndex={-1}
               onClick={goTo1}
             >
               PokeFight
@@ -37,7 +37,7 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
               id="home"
               onClick={goTo0}
               role="button"
-              tabIndex={0}
+              tabIndex={-2}
             >
               <h2>Home</h2>
               <div className={onPage === 0 ? "ultraball" : "pokeball"}>
@@ -49,7 +49,7 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
             <div
               className="pageChange"
               role="button"
-              tabIndex={0}
+              tabIndex={-3}
               onClick={goTo2}
             >
               PokeFeed
@@ -59,7 +59,7 @@ function Header({ goTo0, goTo1, goTo2, goTo3, goTo4, onPage }) {
             <div
               className="pageChange"
               role="button"
-              tabIndex={0}
+              tabIndex={-4}
               onClick={goTo4}
             >
               PokeDex

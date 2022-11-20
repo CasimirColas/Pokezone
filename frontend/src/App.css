@@ -6,7 +6,6 @@
   font-weight: 700;
 }
 body {
-  display: flex;
   background-image: url(./assets/images/Pokebackground.jpg);
   background-size: cover;
   background-attachment: fixed;
