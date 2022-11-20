@@ -11,6 +11,7 @@ function SearchBar() {
   const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [isDetailed, setIsDetailed] = useState(false);
   function changeStatus(name) {
+    setSearch(null);
     setDisplayedPoke(name);
     setIsDetailed(!isDetailed);
   }

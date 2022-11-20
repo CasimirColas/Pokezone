@@ -20,10 +20,10 @@
 
 .pokeListBack {
   opacity: 50%;
-  height: 30.2rem;
+  height: 30rem;
   width: 16rem;
-  background-color: #cd6a83;
-  box-shadow: #ff0040 2px 1px 3px 1px;
+  background-color: #0a285f;
+  box-shadow: #a29a9c 2px 1px 3px 1px;
   border-bottom-left-radius: 15% 7%;
   border-bottom-right-radius: 15% 7%;
   border-top-left-radius: 15% 7%;
@@ -99,8 +99,8 @@ img.pokedown {
     top: 50%;
   }
   to {
-    height: 30.8rem;
-    top: 8.5%;
+    height: 31rem;
+    top: 8%;
   }
 }
 
