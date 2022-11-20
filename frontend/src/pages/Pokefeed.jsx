@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "../components/App components/css/Pokefeed.css";
@@ -12,7 +13,8 @@ function Pokefeed() {
   useEffect(() => {
     axios
       .get(
-        `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 151) + 1
+        `https://pokeapi.co/api/v2/pokemon/${
+          Math.floor(Math.random() * 151) + 1
         }`
       )
       .then((response) => response.data)
@@ -83,7 +85,6 @@ function Pokefeed() {
         return <div className="error">Error</div>;
     }
   }
-  console.warn(pokemon);
   return <div className="pokefeed">{onDisplay(display)}</div>;
 }
 

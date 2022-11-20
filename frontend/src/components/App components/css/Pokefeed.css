@@ -1,6 +1,8 @@
 .pokefeed {
-  margin-top: 20vh;
-  margin-bottom: 10vh;
+  margin-top: 12vh;
+  margin-bottom: 5vh;
+  margin-left: 1vw;
+  margin-left: 1vw;
 }
 
 /*Affichage du pokémon*/
@@ -16,10 +18,16 @@ align-items: center;
   margin: 30px;
 }
 
+.pokemon-infos-txt{
+  margin-left: 7vw;
+  margin-right: 7vw;
+}
+
 .pokemon-name {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5vh;
   color:white;
   width: 167px;
   height: 19px;
@@ -35,16 +43,17 @@ align-items: center;
   justify-content: space-evenly;
   margin-top: 30px;
   margin-bottom: 30px;
+  align-items: center;
 }
 
-.berries{
-  display: block;
+.berries:hover {
+  cursor: pointer;
 }
 
-/* Barre de porgression */
+/* Barre de progression */
 .progress-bar {
-  width: 348px;
-  height: 31px;
+  width: inherit;
+  height: 3vh;
   margin-top: 15px;
   margin-left: 10px;
   margin-right: 10px;
@@ -52,17 +61,93 @@ align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px 0px;
   opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.progress-bar-value{
+  color: black;
+}
 /*Level Up*/
-.levelup-img {
-  width: 50px;
-  height: 200px;
+.levelup-box{
   margin: 30px;
 }
 
-/*Tableau stats*/
-table th, table td {
-  border: 1px solid grey;
-  border-collapse: collapse;
+.levelup-img {
+  width: 25vw;
+  height: 18vh;
 }
+
+.statsbutton {
+  width: 200px;
+  height: 25px;
+  margin-top: 2vh;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  background-color: #B0002D;
+  color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px 0px;
+}
+
+/*Tableau stats*/
+.stats-grid{
+  background-color: #aba9bc;
+  border: solid 5px #1c4cbd ;
+  border-radius: 20px 0px;
+  color: blue;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: repeat(2,1.5fr) 0.1fr 1.5fr;
+  grid-template-rows: repeat(7,1fr);
+  text-align: center;
+  grid-auto-flow: column;
+}
+
+.card{
+  background-color:rgba(171, 169, 188, 0.5);
+  font-family: "Noto Sans", sans-serif;
+  color: black;
+  padding: 5px;  
+}
+
+.emptycard {
+  grid-column: 1/2;
+  grid-row: 1/2 !important;
+  border-bottom: 5px solid #1c4cbd;
+  border-right: 3px solid #1c4cbd;
+  border-radius: 15px 0px 0px 0px;
+}
+
+.hpcard, .attackcard, .defensecard, .speedcard, .specialattackcard, .specialdefensecard{
+  border-bottom: 3px solid #1c4cbd;
+  border-right: 3px solid #1c4cbd;
+}
+
+.emptycard2 {
+  border-bottom: 5px solid #1c4cbd;
+}
+
+.oldpokecard {
+  grid-column: 2/3;
+  grid-row: 1/2 !important;
+  border-bottom: 5px solid #1c4cbd;
+}
+
+.evopokecard {
+  grid-column: 4/5;
+  grid-row: 1/2 !important;
+  border-bottom: 5px solid #1c4cbd;
+}
+
+.lastcard {
+  border-radius: 0px 0px 15px 0px;
+}
+ /*Values Up*/
+ .valuesup-txt {
+  background-color: rgb(40, 130, 40);
+  width: 1.7vw;
+  border-radius: 5px;
+  padding: 2.5px;
+ }

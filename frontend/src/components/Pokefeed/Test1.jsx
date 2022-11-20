@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Proptypes from "prop-types";
 
 function Test1({ nextPage, name, image }) {
   const [berries, setBerries] = useState("");
@@ -54,6 +55,9 @@ function Test1({ nextPage, name, image }) {
         <p className="pokemon-name">{name}</p>
       </div>
       <div className="berries-box">
+        <p className="click-berries-txt">
+          Click on the berries to feed the Pokémon
+        </p>
         <img
           className="berries"
           src={berries.berryImg}
@@ -80,10 +84,18 @@ function Test1({ nextPage, name, image }) {
         />
       </div>
       <div className="progress-bar">
-        <p value={progress}>{progress}</p>
+        <p className="progress-bar-value" value={progress}>
+          {progress} %
+        </p>
       </div>
     </div>
   );
 }
 
 export default Test1;
+
+Test1.propTypes = {
+  nextPage: Proptypes.number.isRequired,
+  name: Proptypes.number.isRequired,
+  image: Proptypes.string.isRequired,
+};

@@ -1,60 +1,67 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react";
-import PropTypes from "prop-types";
+import Proptypes from "prop-types";
 import ValuesUp from "./ValuesUp";
 
-function Test3({ hp, attack, defense, specialattack, specialdefense, speed }) {
+function Test3({
+  name,
+  hp,
+  attack,
+  defense,
+  specialattack,
+  specialdefense,
+  speed,
+  nextPage,
+}) {
   return (
     <div>
-      <table className="pokemon-table">
-        <tr>
-          <td />
-          <th scope="col" className="">
-            Pokémon de base
-          </th>
-          <th scope="col" className="" />
-          <th scope="col" className="">
-            Pokémon évolué
-          </th>
-        </tr>
-        <tr>
-          <th scope="row">Points de vie</th>
-          <td>{hp}</td>
+      <p className="pokemon-name">Pokémon evolution</p>
+      <section className="stats-grid">
+        <div className="card emptycard" />
+        <div className="card hpcard">Health Values</div>
+        <div className="card attackcard">Attack</div>
+        <div className="card defensecard">Defense</div>
+        <div className="card speedcard">Speed</div>
+        <div className="card specialattackcard">Special Attack</div>
+        <div className="card specialdefensecard">Special Defense</div>
+        <div className="card oldpokecard">{name}</div>
+        <div className="card">{hp}</div>
+        <div className="card">{attack}</div>
+        <div className="card">{defense}</div>
+        <div className="card">{speed}</div>
+        <div className="card">{specialattack}</div>
+        <div className="card">{specialdefense}</div>
+        <div className="card emptycard2" />
+        <div className="card">
           <ValuesUp />
-          <td>15</td>
-        </tr>
-        <tr>
-          <th scope="row">Attaque</th>
-          <td>{attack}</td>
+        </div>
+        <div className="card">
           <ValuesUp />
-          <td>15</td>
-        </tr>
-        <tr>
-          <th scope="row">Défense</th>
-          <td>{defense}</td>
+        </div>
+        <div className="card">
           <ValuesUp />
-          <td>15</td>
-        </tr>
-        <tr>
-          <th scope="row">Vitesse</th>
-          <td>{speed}</td>
+        </div>
+        <div className="card">
           <ValuesUp />
-          <td>15</td>
-        </tr>
-        <tr>
-          <th scope="row">Attaque Spéciale</th>
-          <td>{specialattack}</td>
+        </div>
+        <div className="card">
           <ValuesUp />
-          <td>15</td>
-        </tr>
-        <tr>
-          <th scope="row">Defense Spéciale</th>
-          <td>{specialdefense}</td>
+        </div>
+        <div className="card">
           <ValuesUp />
-          <td>15</td>
-        </tr>
-      </table>
+        </div>
+        <div className="card evopokecard">After</div>
+        <div className="card">1</div>
+        <div className="card">2</div>
+        <div className="card">3</div>
+        <div className="card">4</div>
+        <div className="card">5</div>
+        <div className="card lastcard">6</div>
+      </section>
+      <button className="statsbutton" type="submit" onClick={nextPage}>
+        Play again
+      </button>
     </div>
   );
 }
@@ -62,10 +69,12 @@ function Test3({ hp, attack, defense, specialattack, specialdefense, speed }) {
 export default Test3;
 
 Test3.propTypes = {
-  hp: PropTypes.number,
-  attack: PropTypes.number,
-  defense: PropTypes.number,
-  specialattack: PropTypes.number,
-  specialdefense: PropTypes.number,
-  speed: PropTypes.number,
+  nextPage: Proptypes.number,
+  name: Proptypes.string,
+  hp: Proptypes.number,
+  attack: Proptypes.number,
+  defense: Proptypes.number,
+  specialattack: Proptypes.number,
+  specialdefense: Proptypes.number,
+  speed: Proptypes.number,
 };
