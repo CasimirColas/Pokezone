@@ -1,0 +1,88 @@
+/*CSS properties:*/
+
+:root {
+  --primary-color: #0a285f;
+  --secondary-color: #b0002d;
+  --light-gray: #aba9bc;
+  --dark-gray: #767586;
+  --margin-city: 1rem;
+}
+
+.pokedexlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  gap: 0.5rem;
+}
+
+.pokeimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+}
+
+.pokeBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 15rem;
+  height: 2rem;
+  background-color: #ebebf1;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 15px;
+}
+
+.pokecards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+input {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 15px;
+}
+
+@keyframes PokeListGrow {
+  from {
+    height: 0;
+    top: 50%;
+  }
+  to {
+    height: 22rem;
+    bottom: 30%;
+  }
+}
+
+/* The element to apply the animation to */
+.searchbar,
+.pokeBar,
+.pokecards {
+  animation-name: PokeListGrow;
+  animation-duration: 1.5s;
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}

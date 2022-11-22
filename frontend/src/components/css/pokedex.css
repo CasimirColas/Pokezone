@@ -1,0 +1,122 @@
+/*CSS properties:*/
+
+:root {
+  --primary-color: #0a285f;
+  --secondary-color: #b0002d;
+  --light-gray: #aba9bc;
+  --dark-gray: #767586;
+  --margin-city: 1rem;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 600px;
+  margin-top: 100px;
+}
+
+.pokeListBack {
+  opacity: 50%;
+  height: 30rem;
+  width: 16rem;
+  background-color: #0a285f;
+  box-shadow: #a29a9c 2px 1px 3px 1px;
+  border-bottom-left-radius: 15% 7%;
+  border-bottom-right-radius: 15% 7%;
+  border-top-left-radius: 15% 7%;
+  border-top-right-radius: 15% 7%;
+  position: absolute;
+  top: 50%;
+  z-index: 0;
+}
+
+.pokeListBack p {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+img.pokeup,
+img.pokedown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+}
+
+.top_pokeball_parent,
+.bottom_pokeball_parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 55vh;
+}
+
+.pokeup,
+.pokedown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.pokedown {
+  bottom: calc(100% - 50px);
+}
+
+.pokeup {
+  bottom: 0;
+}
+
+@keyframes slideInUp {
+  from {
+    visibility: visible;
+  }
+  to {
+    bottom: calc(100% - 50px);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    visibility: visible;
+  }
+  to {
+    bottom: 2%;
+  }
+}
+
+@keyframes grow {
+  from {
+    height: 0;
+    top: 50%;
+  }
+  to {
+    height: 31rem;
+    top: 8%;
+  }
+}
+
+/* The element to apply the animation to */
+.pokeup {
+  animation-name: slideInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.pokedown {
+  animation-name: slideInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.pokeListBack {
+  animation-name: grow;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
