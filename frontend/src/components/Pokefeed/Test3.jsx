@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react";
 import Proptypes from "prop-types";
-import ValuesUp from "./ValuesUp";
 
 function Test3({
   name,
@@ -13,10 +12,15 @@ function Test3({
   specialdefense,
   speed,
   nextPage,
+  nameEvol,
+  statsEvol,
+  imageEvol,
+  noEvol,
 }) {
   return (
     <div>
       <p className="pokemon-name">Pokémon evolution</p>
+      <div>{noEvol ? "no evolution" : <img src={imageEvol} alt="" />}</div>
       <section className="stats-grid">
         <div className="card emptycard" />
         <div className="card hpcard">Health Values</div>
@@ -33,31 +37,19 @@ function Test3({
         <div className="card">{specialattack}</div>
         <div className="card">{specialdefense}</div>
         <div className="card emptycard2" />
-        <div className="card">
-          <ValuesUp />
-        </div>
-        <div className="card">
-          <ValuesUp />
-        </div>
-        <div className="card">
-          <ValuesUp />
-        </div>
-        <div className="card">
-          <ValuesUp />
-        </div>
-        <div className="card">
-          <ValuesUp />
-        </div>
-        <div className="card">
-          <ValuesUp />
-        </div>
-        <div className="card evopokecard">After</div>
-        <div className="card">1</div>
-        <div className="card">2</div>
-        <div className="card">3</div>
-        <div className="card">4</div>
-        <div className="card">5</div>
-        <div className="card lastcard">6</div>
+        <div className="card" />
+        <div className="card" />
+        <div className="card" />
+        <div className="card" />
+        <div className="card" />
+        <div className="card" />
+        <div className="card evopokecard">{nameEvol}</div>
+        <div className="card">{statsEvol.hp}</div>
+        <div className="card">{statsEvol.attack}</div>
+        <div className="card">{statsEvol.defense}</div>
+        <div className="card">{statsEvol.speed}</div>
+        <div className="card">{statsEvol.specialattack}</div>
+        <div className="card lastcard">{statsEvol.specialdefense}</div>
       </section>
       <button className="statsbutton" type="submit" onClick={nextPage}>
         Play again
@@ -77,4 +69,8 @@ Test3.propTypes = {
   specialattack: Proptypes.number,
   specialdefense: Proptypes.number,
   speed: Proptypes.number,
+  nameEvol: Proptypes.string,
+  statsEvol: Proptypes.number,
+  imageEvol: Proptypes.string.isRequired,
+  noEvol: Proptypes.bool.isRequired,
 };
