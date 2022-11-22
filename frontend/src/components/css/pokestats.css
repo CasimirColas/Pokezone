@@ -167,61 +167,55 @@
 }
 
 .color-container1 p {
+  height: inherit;
   font-size: 0.8rem;
-  width: 7ch;
   background: rgba(3, 189, 55, 0.5);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
   border-radius: 10px;
-  margin-right: 80px;
 }
 
 .color-container2 p {
+  height: inherit;
   font-size: 0.8rem;
-  width: 10ch;
   background: rgba(251, 14, 14, 0.5);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
   border-radius: 10px;
-  margin-right: 58px;
 }
 
 .color-container3 p {
+  height: inherit;
   font-size: 0.8rem;
-  width: 10ch;
   background: rgba(206, 237, 7, 0.5);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
   border-radius: 10px;
-  margin-right: 58px;
 }
 
 .color-container4 p {
+  height: inherit;
   font-size: 0.8rem;
-  width: 12ch;
   background: rgba(152, 0, 139, 0.5);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
   border-radius: 10px;
-  margin-right: 43px;
 }
 
 .color-container5 p {
+  height: inherit;
   font-size: 0.8rem;
-  width: 12ch;
   background: rgba(25, 25, 206, 0.5);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
   border-radius: 10px;
-  margin-right: 43px;
 }
 
 .color-container6 p {
+  height: inherit;
   font-size: 0.8rem;
-  width: 7ch;
   background: rgba(7, 248, 232, 0.5);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
   border-radius: 10px;
-  margin-right: 80px;
 }
