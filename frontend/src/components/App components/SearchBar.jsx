@@ -40,7 +40,7 @@ function SearchBar() {
         <PokemonStats
           nom={displayedPoke}
           onClick={() => {
-            changeStatus(null);
+            changeStatus(undefined);
           }}
         />
       );

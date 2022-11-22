@@ -23,7 +23,6 @@ function PokemonStats({ nom, onClick }) {
   const capitalizeFirst = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
-
   return (
     <div
       className="pokeStats"
@@ -82,9 +81,9 @@ function PokemonStats({ nom, onClick }) {
         className="pokemonstats"
         style={{
           backgroundColor: `rgba(${
-            colors[pokemon.types[1].type.name].rgb
+            colors[pokemon.types[0].type.name].rgb
           }, 0.5)`,
-          borderColor: `#${colors[pokemon.types[1].type.name].hex}`,
+          borderColor: `#${colors[pokemon.types[0].type.name].hex}`,
         }}
       >
         <div className="stats">
