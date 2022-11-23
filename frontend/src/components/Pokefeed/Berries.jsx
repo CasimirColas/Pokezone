@@ -1,6 +1,6 @@
 import React from "react";
 import Proptypes from "prop-types";
-import "../App components/css/Pokefeed.css";
+import "../App-components/css/Pokefeed.css";
 
 function Berries({ levelProgress, berrieValue, display }) {
   return (

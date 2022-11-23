@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../css/displaypokemon.css";
+import "./css/displaypokemon.css";
 
 function DisplayPokemon({ displayedPokemons }) {
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../css/searchbar.css";
+import "./css/searchbar.css";
 import Pokeitem from "./Pokeitem";
 import PokemonStats from "./PokemonStats";
 

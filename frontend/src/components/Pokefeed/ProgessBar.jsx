@@ -1,7 +1,7 @@
 import React from "react";
 import Proptypes from "prop-types";
 import LevelUp from "./LevelUp";
-import "../App components/css/Pokefeed.css";
+import "../App-components/css/Pokefeed.css";
 
 function ProgressBar({ value }) {
   return (

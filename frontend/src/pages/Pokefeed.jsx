@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "../components/App components/css/Pokefeed.css";
+import "../components/App-components/css/Pokefeed.css";
 import Test1 from "../components/Pokefeed/Test1";
 import Test2 from "../components/Pokefeed/Test2";
 import Test3 from "../components/Pokefeed/Test3";

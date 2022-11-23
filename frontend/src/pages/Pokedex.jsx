@@ -1,8 +1,8 @@
 import React from "react";
-import "../components/css/pokedex.css";
+import "./css/pokedex.css";
 import PokeDown from "../assets/images/PokeDown.png";
 import PokeUp from "../assets/images/PokeUp.png";
-import SearchBar from "../components/App components/SearchBar";
+import SearchBar from "../components/Pokedex/SearchBar";
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import "animate.css";
 

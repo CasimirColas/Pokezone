@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-import "../css/pokestats.css";
+import "./css/pokestats.css";
 import colors from "../../assets/tables/pokemonColorPicker";
 
 function PokemonStats({ nom, onClick }) {

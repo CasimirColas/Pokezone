@@ -1,5 +1,5 @@
 import React from "react";
-import "../App components/css/Pokefeed.css";
+import "../App-components/css/Pokefeed.css";
 
 function LevelUp() {
   return (

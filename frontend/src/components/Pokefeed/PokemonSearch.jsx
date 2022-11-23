@@ -1,4 +1,4 @@
-import "../App components/css/Pokefeed.css";
+import "../App-components/css/Pokefeed.css";
 
 function PokemonSearch() {
   /* const [pokemonName, setPokemonName] = useState(""); */

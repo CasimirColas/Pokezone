@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from "react";
-import "../App components/css/Pokefeed.css";
+import "../App-components/css/Pokefeed.css";
 
 function PokemonCard() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import Pokemon2 from "../assets/images/Pokemon2.png";
-import "../components/css/home.css";
+import "./css/home.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
 function Index() {
   return (
