@@ -272,9 +272,23 @@
   }
 
   .pokemon-img {
-    min-width: 25px;
-    max-width: 150px;
-    min-height: 25px;
-    max-height: 150px;
+    min-width: 100px;
+    max-width: 200px;
+    min-height: 100px;
+    max-height: 200px;
    }
+
+   .berries-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 40px;
+    align-items: center;
+  }
+
+  .berries {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
 }
