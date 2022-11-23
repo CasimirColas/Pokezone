@@ -1,0 +1,206 @@
+/*CSS properties:*/
+
+:root {
+  --primary-color: #0a285f;
+  --secondary-color: #b0002d;
+  --light-gray: #aba9bc;
+  --dark-gray: #767586;
+  --margin-city: 1rem;
+}
+
+.pokeStats {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 31rem;
+  width: 16rem;
+  bottom: 0.2rem;
+  border-bottom-left-radius: 15% 7%;
+  border-bottom-right-radius: 15% 7%;
+  border-top-left-radius: 15% 7%;
+  border-top-right-radius: 15% 7%;
+  gap: 0.5rem;
+}
+
+.basic_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.displaypokeimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 7rem;
+}
+
+.poketypes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.poketypes p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  width: 7ch;
+  height: 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.pokeabilities p {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  width: 25ch;
+  height: 1.5rem;
+}
+
+.pokemonstats {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10%;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-bottom-left-radius: 15% 7%;
+  border-bottom-right-radius: 15% 7%;
+  border-top-left-radius: 15% 7%;
+  border-top-right-radius: 15% 7%;
+  top: 1rem;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20ch;
+  height: 8rem;
+}
+
+.stats-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 25ch;
+}
+
+.stats h4 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 0.7rem;
+  width: 20ch;
+  padding-left: 0.5rem;
+}
+
+.stats p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  width: 22ch;
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}
+
+.color-container1,
+.color-container2,
+.color-container3,
+.color-container4,
+.color-container5,
+.color-container6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20ch;
+  height: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}
+
+.color-container1 p {
+  height: inherit;
+  font-size: 0.8rem;
+  background: rgba(3, 189, 55, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}
+
+.color-container2 p {
+  height: inherit;
+  font-size: 0.8rem;
+  background: rgba(251, 14, 14, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}
+
+.color-container3 p {
+  height: inherit;
+  font-size: 0.8rem;
+  background: rgba(206, 237, 7, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}
+
+.color-container4 p {
+  height: inherit;
+  font-size: 0.8rem;
+  background: rgba(152, 0, 139, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}
+
+.color-container5 p {
+  height: inherit;
+  font-size: 0.8rem;
+  background: rgba(25, 25, 206, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}
+
+.color-container6 p {
+  height: inherit;
+  font-size: 0.8rem;
+  background: rgba(7, 248, 232, 0.5);
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(146, 60, 60, 0.25);
+  border-radius: 10px;
+}

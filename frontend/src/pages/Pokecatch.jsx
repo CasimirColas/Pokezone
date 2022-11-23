@@ -4,7 +4,7 @@ import Catch from "../components/PokeCatch/Catch";
 import Start from "../components/PokeCatch/Start";
 import Stats from "../components/PokeCatch/Stats";
 import Inventory from "../components/PokeCatch/Inventory";
-import "./pokecatch.css";
+import "./css/pokecatch.css";
 
 function Pokecatch() {
   const [progress, setProgress] = useState(0);
