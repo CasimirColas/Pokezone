@@ -51,6 +51,34 @@ function Stats({
     setNumber(Math.floor(Math.random() * (max - min)) + min);
     setProgress(0);
   }
+
+  function barDisplay(s1, s2, s3, s4, s5, s6, n) {
+    let width = 0;
+    if (s1 > width) {
+      width = s1;
+    }
+    if (s2 > width) {
+      width = s2;
+    }
+    if (s3 > width) {
+      width = s3;
+    }
+    if (s4 > width) {
+      width = s4;
+    }
+    if (s5 > width) {
+      width = s5;
+    }
+    if (s6 > width) {
+      width = s6;
+    }
+    width = Math.floor((n / width) * 100);
+    return {
+      width: `${width}%`,
+      marginRight: `${100 - width}%`,
+    };
+  }
+
   return (
     <div className="statsGeneral">
       <div className="capturedPokemon">{name} was captured !</div>
@@ -63,11 +91,10 @@ function Stats({
 
           <div className="videbar">
             <div
-              className="bar"
+              className="barweight"
               style={{
                 height: "100%",
-                width: `${(weight * 150) / 1500}px`,
-                backgroundColor: "#008000",
+                width: `${150}px`,
                 borderRadius: "5px",
               }}
             >
@@ -77,13 +104,16 @@ function Stats({
           <div className="hp">Hp:</div>
           <div className="videbar">
             <div
-              className="bar"
-              style={{
-                height: "100%",
-                width: `${(hp * 150) / 255}px`,
-                backgroundColor: "#008000",
-                borderRadius: "5px",
-              }}
+              className="barhp"
+              style={barDisplay(
+                hp,
+                attack,
+                defense,
+                speed,
+                spattack,
+                spdefense,
+                hp
+              )}
             >
               {hp}
             </div>
@@ -91,13 +121,16 @@ function Stats({
           <div className="attack">Attack:</div>
           <div className="videbar">
             <div
-              className="bar"
-              style={{
-                height: "100%",
-                width: `${(attack * 150) / 255}px`,
-                backgroundColor: "#E94D4D",
-                borderRadius: "5px",
-              }}
+              className="barattack"
+              style={barDisplay(
+                hp,
+                attack,
+                defense,
+                speed,
+                spattack,
+                spdefense,
+                attack
+              )}
             >
               {attack}
             </div>
@@ -105,13 +138,16 @@ function Stats({
           <div className="defense">Defense:</div>
           <div className="videbar">
             <div
-              className="bar"
-              style={{
-                height: "100%",
-                width: `${(defense * 150) / 255}px`,
-                backgroundColor: "#EBC35B",
-                borderRadius: "5px",
-              }}
+              className="bardefense"
+              style={barDisplay(
+                hp,
+                attack,
+                defense,
+                speed,
+                spattack,
+                spdefense,
+                defense
+              )}
             >
               {defense}
             </div>
@@ -119,13 +155,16 @@ function Stats({
           <div className="speed">Speed:</div>
           <div className="videbar">
             <div
-              className="bar"
-              style={{
-                height: "100%",
-                width: `${(speed * 150) / 255}px`,
-                backgroundColor: "#82FFE1",
-                borderRadius: "5px",
-              }}
+              className="barspeed"
+              style={barDisplay(
+                hp,
+                attack,
+                defense,
+                speed,
+                spattack,
+                spdefense,
+                speed
+              )}
             >
               {speed}
             </div>
@@ -133,13 +172,16 @@ function Stats({
           <div className="spattack">Sp. Attack:</div>
           <div className="videbar">
             <div
-              className="bar"
-              style={{
-                height: "100%",
-                width: `${(spattack * 150) / 255}px`,
-                backgroundColor: "#6664C2",
-                borderRadius: "5px",
-              }}
+              className="barspattack"
+              style={barDisplay(
+                hp,
+                attack,
+                defense,
+                speed,
+                spattack,
+                spdefense,
+                spattack
+              )}
             >
               {spattack}
             </div>
@@ -147,13 +189,16 @@ function Stats({
           <div className="spdefense">Sp. Defense:</div>
           <div className="videbar">
             <div
-              className="bar"
-              style={{
-                height: "100%",
-                width: `${(spdefense * 150) / 255}px`,
-                backgroundColor: "#B443B7",
-                borderRadius: "5px",
-              }}
+              className="barspdefense"
+              style={barDisplay(
+                hp,
+                attack,
+                defense,
+                speed,
+                spattack,
+                spdefense,
+                spdefense
+              )}
             >
               {spdefense}
             </div>
