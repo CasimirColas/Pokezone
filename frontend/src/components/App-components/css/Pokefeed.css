@@ -250,7 +250,7 @@
   border-radius: 15px 0px;
 }
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 850px) {
   .page2 {
     display: flex;
     flex-direction: column;
@@ -276,9 +276,9 @@
     max-width: 200px;
     min-height: 100px;
     max-height: 200px;
-   }
+  }
 
-   .berries-box {
+  .berries-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
