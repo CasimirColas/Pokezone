@@ -14,14 +14,13 @@ function Test3({
   nextPage,
   nameEvol,
   statsEvol,
-  imageEvol,
   noEvol,
 }) {
   return (
     <div>
-      <p className="pokemon-name">Pokémon evolution</p>
-      <div>{noEvol ? "no evolution" : <img src={imageEvol} alt="" />}</div>
-      <section className="stats-grid">
+      <p className="pokemon-evo-title">Pokémon evolution</p>
+      <div>{noEvol ? "no evolution" : null}</div>
+      <div className="grid">
         <div className="card emptycard" />
         <div className="card hpcard">Health Values</div>
         <div className="card attackcard">Attack</div>
@@ -36,13 +35,6 @@ function Test3({
         <div className="card">{speed}</div>
         <div className="card">{specialattack}</div>
         <div className="card">{specialdefense}</div>
-        <div className="card emptycard2" />
-        <div className="card" />
-        <div className="card" />
-        <div className="card" />
-        <div className="card" />
-        <div className="card" />
-        <div className="card" />
         <div className="card evopokecard">{nameEvol}</div>
         <div className="card">{statsEvol.hp}</div>
         <div className="card">{statsEvol.attack}</div>
@@ -50,8 +42,8 @@ function Test3({
         <div className="card">{statsEvol.speed}</div>
         <div className="card">{statsEvol.specialattack}</div>
         <div className="card lastcard">{statsEvol.specialdefense}</div>
-      </section>
-      <button className="statsbutton" type="submit" onClick={nextPage}>
+      </div>
+      <button className="playagain" type="submit" onClick={nextPage}>
         Play again
       </button>
     </div>
@@ -71,6 +63,5 @@ Test3.propTypes = {
   speed: Proptypes.number,
   nameEvol: Proptypes.string,
   statsEvol: Proptypes.number,
-  imageEvol: Proptypes.string.isRequired,
   noEvol: Proptypes.bool.isRequired,
 };

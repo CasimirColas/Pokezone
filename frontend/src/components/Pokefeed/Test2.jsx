@@ -4,25 +4,31 @@ import LevelUp from "./LevelUp";
 
 function Test2({ nextPage, name, image, imageEvol, nameEvol, noEvol }) {
   return (
-    <div className="page2">
-      <div className="pokemon-infos">
-        <img className="pokemon-img" src={image} alt={name} />
-        <LevelUp />
-      </div>
-      {noEvol ? (
-        <p className="pokemon-infos-txt">No evolution</p>
-      ) : (
-        <div className="pokemon-infos">
-          <p className="pokemon-infos-txt">
-            {name} has evolved in {nameEvol}
-          </p>
-          <img className="pokemon-img" src={imageEvol} alt={nameEvol} />
+    <div>
+      <div className="page2">
+        <div className="pokemon-infos-init">
+          <img className="pokemon-img" src={image} alt={name} />
         </div>
-      )}
-      <button className="statsbutton" type="submit" onClick={nextPage}>
-        Go to stats
-      </button>
-      <div />
+        <LevelUp />
+        <div className="pokemon-info-box">
+          {noEvol ? (
+            <p className="pokemon-infos-txt2">{name} has no evolution</p>
+          ) : (
+            <div className="pokemon-infos-evol">
+              {" "}
+              <img className="pokemon-img" src={imageEvol} alt={nameEvol} />
+              <p className="pokemon-infos-txt2">
+                {name} has evolved in {nameEvol}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="statsbutton-box">
+        <button className="statsbutton" type="submit" onClick={nextPage}>
+          Go to stats
+        </button>
+      </div>
     </div>
   );
 }

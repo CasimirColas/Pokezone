@@ -9,6 +9,8 @@ function Test1({ nextPage, name, image }) {
   const [berries2, setBerries2] = useState("");
   const [berries3, setBerries3] = useState("");
   const [berries4, setBerries4] = useState("");
+  const [berries5, setBerries5] = useState("");
+  const [berries6, setBerries6] = useState("");
   const [progress, setProgress] = useState(0);
 
   function advanceProgress(number) {
@@ -40,6 +42,8 @@ function Test1({ nextPage, name, image }) {
     apiCall().then((r) => setBerries2(r));
     apiCall().then((r) => setBerries3(r));
     apiCall().then((r) => setBerries4(r));
+    apiCall().then((r) => setBerries5(r));
+    apiCall().then((r) => setBerries6(r));
   }, []);
 
   useEffect(() => {
@@ -54,34 +58,48 @@ function Test1({ nextPage, name, image }) {
         <img src={image} alt="Pokemon" className="pokemon-img" />
         <p className="pokemon-name">{name}</p>
       </div>
-      <div className="berries-box">
+      <div>
         <p className="click-berries-txt">
           Click on the berries to feed the Pokémon
         </p>
-        <img
-          className="berries"
-          src={berries.berryImg}
-          alt="Berry"
-          onClick={() => advanceProgress(berries.xp)}
-        />
-        <img
-          className="berries"
-          src={berries2.berryImg}
-          alt="Berry 2"
-          onClick={() => advanceProgress(berries2.xp)}
-        />
-        <img
-          className="berries"
-          src={berries3.berryImg}
-          alt="Berry 3"
-          onClick={() => advanceProgress(berries3.xp)}
-        />
-        <img
-          className="berries"
-          src={berries4.berryImg}
-          alt="Berry 4"
-          onClick={() => advanceProgress(berries4.xp)}
-        />
+        <div className="berries-box">
+          <img
+            className="berries"
+            src={berries.berryImg}
+            alt="Berry"
+            onClick={() => advanceProgress(berries.xp)}
+          />
+          <img
+            className="berries"
+            src={berries2.berryImg}
+            alt="Berry 2"
+            onClick={() => advanceProgress(berries2.xp)}
+          />
+          <img
+            className="berries"
+            src={berries3.berryImg}
+            alt="Berry 3"
+            onClick={() => advanceProgress(berries3.xp)}
+          />
+          <img
+            className="berries"
+            src={berries4.berryImg}
+            alt="Berry 4"
+            onClick={() => advanceProgress(berries4.xp)}
+          />
+          <img
+            className="berries"
+            src={berries5.berryImg}
+            alt="Berry 4"
+            onClick={() => advanceProgress(berries5.xp)}
+          />
+          <img
+            className="berries"
+            src={berries6.berryImg}
+            alt="Berry 4"
+            onClick={() => advanceProgress(berries6.xp)}
+          />
+        </div>
       </div>
       <div className="progress-bar">
         <p className="progress-bar-value" value={progress}>
