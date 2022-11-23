@@ -346,7 +346,7 @@ function Pokefeed() {
         );
       case 2:
         return (
-          <div className="stats">
+          <div className="stats-pokemons">
             <Test3
               nameEvol={api.name}
               statsEvol={api}
